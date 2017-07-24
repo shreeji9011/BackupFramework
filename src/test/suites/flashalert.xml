@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Login Denticon" allow-return-values="true" verbose="1">  
+ 
+ 		<parameter name="browserType" value="chrome" />  
+ 		<parameter name="url"  
+ 			value="http://dev.denticon.com/aspx/home/login.aspx" />
+  <test name="Login" preserve-order="true"> 			  
+ 		<classes>  
+ 	
+ 		<class name="com.denticon.automationSQA.patient.FlashAlert" />
+ 		 
+ 		</classes>  
+ 		
+ 	</test>  	</suite>
