@@ -15,7 +15,7 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 
 
 public class TreatmentPlan extends SeleniumSuite{
-	String stepInfo=""; 
+		String stepInfo=""; 
 		boolean flag=false; 
 	 	String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\TreatmentPlan.properties"; 
 	 	Properties prop= new Properties();

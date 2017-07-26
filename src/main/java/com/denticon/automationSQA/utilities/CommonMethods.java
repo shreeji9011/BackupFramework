@@ -33,6 +33,7 @@ import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import com.denticon.automationSQA.DriverManager;
+import com.denticon.automationSQA.GetFullPageScreenShot;
 
 
 
@@ -113,9 +114,11 @@ public class CommonMethods{
 	}  
 	
 	
-	public static ExtentReports getReport(ExtentReports extent,ExtentTest test) {  
-		
+	public synchronized static ExtentReports getReport(ExtentReports extent,ExtentTest test) {  
+
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/AutomationReport.html");
+		
+		if (extent == null) {
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		
@@ -130,42 +133,11 @@ public class CommonMethods{
         htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
         htmlReporter.config().setTheme(Theme.DARK);
         
+		 }
         return extent;  
 	} 	
+	
 
-	 public static void getResult(ITestResult result,ExtentTest test) throws Exception
-	    {
-	        if(result.getStatus() == ITestResult.FAILURE)
-	        {
-	            test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));
-	            test.fail(result.getThrowable());
-	        }
-	        else if(result.getStatus() == ITestResult.SUCCESS)
-	        {
-	            test.log(Status.PASS, MarkupHelper.createLabel(result.getName()+" Test Case PASSED", ExtentColor.GREEN));
-	        }
-	        else
-	        {
-	            test.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" Test Case SKIPPED", ExtentColor.ORANGE));
-	            test.skip(result.getThrowable());
-	        }
-	    }
-	 
-	 public void captureAndDisplayScreenShot(WebDriver ldriver, ExtentTest eTest){
-		 String extentReportImage = "../extentReport/screenshots/" + System.currentTimeMillis() + ".png";
-		// Take screenshot and store as a file format
-		File src=((TakesScreenshot)ldriver).getScreenshotAs(OutputType.FILE);
-		try {
-			// now copy the screenshot to desired location using copyFile method
-		//	FileUtils.copyFile(src, new File(extentReportImage));
-			eTest.log(Status.INFO, "Screenshot from : " + extentReportImage, MediaEntityBuilder.createScreenCaptureFromPath(extentReportImage).build());
-		} catch (IOException e)
-		{
-			System.out.println("Error in the captureAndDisplayScreenShot method: " + e.getMessage());
-		}
-	}
-	 
-	 
 	public static void closeReport(ExtentReports extent, ExtentTest test ){  
 //		extent.endTest(test);
 		extent.flush();

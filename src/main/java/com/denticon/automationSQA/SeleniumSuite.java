@@ -1,6 +1,5 @@
 package com.denticon.automationSQA;
 
-import java.io.File;
 import java.lang.reflect.Method;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -17,33 +16,34 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.Assert;
-import org.testng.ITestContext;
+
 import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.SkipException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.denticon.automationSQA.pom.ILogin;
 import com.denticon.automationSQA.utilities.CommonMethods;
 
 public class SeleniumSuite {
-	public RemoteWebDriver driver;
 	
-	//static HTMLReporter htmlReporter;
- 	ExtentReports extent; 
- 	ExtentTest test;   
+public RemoteWebDriver driver;
+	
+public static ExtentHtmlReporter htmlReporter;
+public static ExtentReports extent;
+public static ExtentTest test;
+	
+   
     static String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\login.properties"; 
     static String username=""; 
     static String password=""; 
-//    static ExtentReports repo; 
-//    static ExtentTest logger; 
+
     static Properties prop= new Properties(); 
  	boolean flag=false; 
                    
@@ -54,20 +54,7 @@ public class SeleniumSuite {
 		DateFormat dateFormat = new SimpleDateFormat("yyMMddHHmmss");
 		Date date = new Date();
 		String currentDate = dateFormat.format(date); 
-//		extent = new ExtentReports(System.getProperty("user.dir")+"\\target\\report"+currentDate+".html",true);
-//        extent.loadConfig(new File(System.getProperty("user.dir")+"\\src\\main\\resources\\extent-config.xml"));
-                
-/*        extent.addSystemInfo("OS", "Windows 10");
-        extent.addSystemInfo("Host Name", "Chaitali");
-        extent.addSystemInfo("Environment", "SQA");
-        extent.addSystemInfo("User Name", "Chaitali Brahmbhatt");
-         
-        //htmlReporter.config().setChartVisibilityOnOpen(true);
-        //htmlReporter.config().setDocumentTitle("AutomationTesting.in Demo Report");
-        //htmlReporter.config().setReportName("My Own Report");
-        //htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
-        //htmlReporter.config().setTheme(Theme.DARK);					*/
-		
+
 		Config config = new Config();
 		if (driver == null) {
 			driver = com.denticon.automationSQA.DriverManager.getDriver();
@@ -119,7 +106,7 @@ public class SeleniumSuite {
  
  			CommonMethods.isElementPresent(ILogin.LNK_SIGNOFF); 
  			test.log(Status.PASS, "Successfully logged into Denticon"); 
- 			CommonMethods.closeReport(extent,test); 
+ 	//		CommonMethods.closeReport(extent,test); 
  			Thread.sleep(3000); 
  
  
@@ -135,8 +122,10 @@ public class SeleniumSuite {
 		{
 	        if(result.getStatus() == ITestResult.FAILURE)
 	        {
+	            String screenShotPath = GetFullPageScreenShot.capture(driver, "MyFullPageScreenshot");
 	            test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));
 	            test.fail(result.getThrowable());
+	            test.fail("Snapshot below: " + test.addScreenCaptureFromPath(screenShotPath));
 	        }
 	        else if(result.getStatus() == ITestResult.SUCCESS)
 	        {
@@ -147,9 +136,11 @@ public class SeleniumSuite {
 	            test.log(Status.SKIP, MarkupHelper.createLabel(result.getName()+" Test Case SKIPPED", ExtentColor.ORANGE));
 	            test.skip(result.getThrowable());
 	        }
+	        extent.flush();
 	    }
+	 
 		 logout();
-//		 extent.endTest(test);
+	//	 extent.endTest(test);
 	        
 	        
 	}
@@ -171,6 +162,7 @@ public class SeleniumSuite {
  	
  	@AfterTest
  	public void afterTest() {
+ 	//	CommonMethods.closeReport(extent,test);
  		extent.flush();
  	}
 	

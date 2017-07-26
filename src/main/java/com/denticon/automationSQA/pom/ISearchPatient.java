@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public interface ISearchPatient {
 
 	By TAB_SearchPatient=By.linkText("Search Patient"); 
-	By Patient_Info_Title=By.id("//*[@id='HelpBar_SpanPageTitle']"); 
+	By Patient_Info_Title=By.id("HelpBar_SpanPageTitle"); 
 	
 	By RADIOBTN_searchForPatient = By.id("rdoPatient");
 	By RADIOBTN_searchForResponsibleParty = By.id("rdoResp");
@@ -31,17 +31,18 @@ public interface ISearchPatient {
 	By RADIOBTN_IncludeInactivePatients = By.id("chkInactivePat");
 	
 	By TXT_searchText = By.id("txtSearchText");
-	By INP_responsibleParty_cash = By.id("//input[@id='RespPartyType_RespPartyType_0']");
-	By INP_responsibleParty_collections = By.id("//*[@id='RespPartyType_RespPartyType_1']");
-	By INP_responsibleParty_discounts = By.id("//*[@id='RespPartyType_RespPartyType_2']");
-	By INP_responsibleParty_familyfriends = By.id("//*[@id='RespPartyType_RespPartyType_3']");
-	By INP_responsibleParty_insurance = By.id("//*[@id='RespPartyType_RespPartyType_4']");
-	By INP_responsibleParty_medicaid = By.id("//*[@id='RespPartyType_RespPartyType_5']");
-	By INP_responsibleParty_needsupdate = By.id("//*[@id='RespPartyType_RespPartyType_6']");
-	By INP_responsibleParty_ppo = By.id("//*[@id='RespPartyType_RespPartyType_7']");
-	By INP_responsibleParty_other = By.id("//*[@id='RespPartyType_RespPartyType_8']");
-	By INP_responsibleParty_prepaidOrManagedCare = By.id("//*[@id='RespPartyType_RespPartyType_9']");
-	By INP_responsibleParty_union = By.id("//*[@id='RespPartyType_RespPartyType_10']");
+	By INP_responsibleParty_ID = By.id("rdoRespID");
+	By INP_responsibleParty_cash = By.id("RespPartyType_RespPartyType_0");
+	By INP_responsibleParty_collections = By.id("RespPartyType_RespPartyType_1");
+	By INP_responsibleParty_discounts = By.id("RespPartyType_RespPartyType_2");
+	By INP_responsibleParty_familyfriends = By.id("RespPartyType_RespPartyType_3");
+	By INP_responsibleParty_insurance = By.id("RespPartyType_RespPartyType_4");
+	By INP_responsibleParty_medicaid = By.id("RespPartyType_RespPartyType_5");
+	By INP_responsibleParty_needsupdate = By.id("RespPartyType_RespPartyType_6");
+	By INP_responsibleParty_ppo = By.id("RespPartyType_RespPartyType_7");
+	By INP_responsibleParty_other = By.id("RespPartyType_RespPartyType_8");
+	By INP_responsibleParty_prepaidOrManagedCare = By.id("RespPartyType_RespPartyType_9");
+	By INP_responsibleParty_union = By.id("RespPartyType_RespPartyType_10");
 	
 	By INP_patienttype_ABArabicspeaking = By.id("PatientType_PatType_0");
 	By INP_patienttype_C1ClassI = By.id("PatientType_PatType_1");
@@ -70,6 +71,7 @@ public interface ISearchPatient {
 	
 	
 	By BTN_search = By.id("btnSearch");
+	By BTN_Save = By.id("btnSave");
 	
 	By TABLE_searchResults = By.id("dgSearchctl0");
 	

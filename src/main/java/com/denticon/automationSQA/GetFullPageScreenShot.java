@@ -11,14 +11,13 @@ import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 
-
-	public class GetFullPageScreenShot
+public class GetFullPageScreenShot
+{
+    public static String capture(WebDriver driver, String screenShotName) throws Exception
     {
-        public static String capture(WebDriver driver, String screenShotName) throws Exception
-        {
-            Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
-            String dest = System.getProperty("user.dir") + "/test-output/AutomationReport.html/ErrorScreenshots/" + screenShotName + ".png";
-            ImageIO.write(screenshot.getImage(),"PNG",new File(dest));
-            return dest;
-        }
-    } 
+        Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+        String dest = System.getProperty("user.dir") +"/test-output/AutomationReport.html" + screenShotName + ".png";
+        ImageIO.write(screenshot.getImage(),"PNG",new File(dest));
+        return dest;
+    }
+ } 
