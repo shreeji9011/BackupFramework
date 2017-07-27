@@ -51,9 +51,9 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 		 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_AddNewPatient);
 		 			test.log(Status.PASS, "Click on add new patient");
 		 			
-/*		 			stepInfo="Select Title";
+		 			stepInfo="Select Title";
 		 			String title=CommonMethods.readDatafromProps(filePath,"NIck_I");
-		 			flag=CommonMethods.selectFromList(IAddPatient.SLC_TITLE_NICKNAME,title); 
+		 			flag=CommonMethods.selectFromList(IAddPatient.SLC_TITLE_NICKNAME,"Mr"); 
 		 //			test.log(Status.PASS, "Select Title");
 		 			
 		 			stepInfo="Enter the Nick name";
@@ -64,7 +64,7 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 		 			Date date = new Date();
 		 			String currentDate = dateFormat.format(date); 	*/
 		 			
-/*		 			stepInfo="Enter Last name"; 
+		 			stepInfo="Enter Last name"; 
 		 			String lastName=CommonMethods.readDatafromProps(filePath,"LastName");
 		 			//flag=CommonMethods.sendText(IAddPatient.TXT_Last_Name, lastName+currentDate); 
 		 			flag=CommonMethods.sendText(IAddPatient.TXT_Last_Name, lastName);
@@ -84,7 +84,7 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 		 			
 		 			Thread.sleep(2000);
 		 			//Handle duplicate patient pop up
-		 //			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
+		 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
 		 			
 		 			
 		 			
@@ -256,7 +256,7 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 		 			
 		 			
 		 			//Handle duplicate patient pop up
-		 		//	flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
+		 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
 		 			
 		 			stepInfo="Go To ResponsibleParty";
 		 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_GoToResponsibleParty);
@@ -313,7 +313,8 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 		 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_AddRecallInformation);
 		 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_Finish);					
 		 			test.log(Status.PASS, "Go to Add Recall Information");
-		 			*/
+		 		
+		 			
 		 		} catch (Exception e) { 
 		 			e.printStackTrace(); 
 		 			Assert.fail(); 

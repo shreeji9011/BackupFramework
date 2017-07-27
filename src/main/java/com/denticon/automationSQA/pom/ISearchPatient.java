@@ -75,5 +75,7 @@ public interface ISearchPatient {
 	
 	By TABLE_searchResults = By.id("dgSearchctl0");
 	
+	///////////////////// Responsible Party /////////////
 	
+	By TAB_ResponsibleParty = By.linkText("Responsible Party");
 }
