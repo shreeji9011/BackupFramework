@@ -21,11 +21,12 @@ public class OrthoPaymentPlan extends SeleniumSuite{
 	@Test(description="Verify Search Patient functionality")
 	public boolean verifyOrthoPaymentPlanModule() {
  		if(verifyOrthoPaymentPlanPage())
- 			System.out.println("Payment Plan page verification passed");
+ 			System.out.println("Ortho Payment Plan page verification passed");
  		else
- 			System.out.println("Payment Plan page verification failed");
+ 			System.out.println("Ortho  Payment Plan page verification failed");
 		return flag;
 	}	
+	
 	
 	@Test(description = "Verify Delete Payment Plan", dependsOnMethods = { "verifyOrthoPaymentPlanModule" })
 	public void verifyDeletePaymentPlan(){
@@ -45,7 +46,7 @@ public class OrthoPaymentPlan extends SeleniumSuite{
 			flag = CommonMethods.isAlertPresent();
 		
 	}
-	//*[@id="Table1"]/tbody/tr[2]/td[2]/table/tbody/tr[2]/td[1]
+
 	public boolean verifyOrthoPaymentPlanPage(){
 		
 		try{ 
@@ -59,20 +60,27 @@ public class OrthoPaymentPlan extends SeleniumSuite{
  			flag=CommonMethods.clickIfEnable(IPaymentPlan.TAB_OrthoPaymentPlan);
  			
  			stepInfo="Enter Plan Code";
- 			flag=CommonMethods.selectFromList(IPaymentPlan.SLC_OrthoPaymentBillingCode,"D8999H");
+ 			flag=CommonMethods.selectFromList(IPaymentPlan.SLC_OrthoPaymentBillingCode,"D8999");
+
  			
  			stepInfo="Enter Treatment End Date Date";
- 			flag=CommonMethods.sendText(IPaymentPlan.TXT_TreatmentEndDate,"09302017");
+ 			flag=CommonMethods.sendText(IPaymentPlan.TXT_TreatmentEndDate,"09102017");
  			
  			stepInfo="Check Start Patient Payment Plan checkbox";
  			flag=CommonMethods.clickIfEnable(IPaymentPlan.CHK_StartPatientPaymentPlan);
  			
+ 			
+ 			stepInfo="Enter Patient Balance Amount";
+ 			flag=CommonMethods.sendText(IPaymentPlan.TXT_Fee,"1");
+ 			flag=CommonMethods.sendText(IPaymentPlan.TXT_EstimatePatient,"1");
+ 					
+ 			Thread.sleep(3000);
  			stepInfo="save Ortho payment";
  			flag=CommonMethods.clickIfEnable(IPaymentPlan.BTN_save);
  			
  			stepInfo="accept alert box";
  			flag=CommonMethods.isAlertPresent();
- 			
+ 			Thread.sleep(5000);
  			 			 
  		} catch (Exception e) { 
  			e.printStackTrace(); 

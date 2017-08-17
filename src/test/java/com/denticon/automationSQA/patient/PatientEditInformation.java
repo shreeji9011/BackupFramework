@@ -1,13 +1,9 @@
 package com.denticon.automationSQA.patient;
 
-import java.lang.reflect.Method;
-
 import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.denticon.automationSQA.SeleniumSuite;
 import com.denticon.automationSQA.pom.IAddPatient;
@@ -17,27 +13,12 @@ public class PatientEditInformation extends SeleniumSuite {
 	
 	String stepInfo=""; 
 	boolean flag=false; 
- 	
- 	ExtentReports extent;
-	ExtentTest test; 
- 	
-	
- 	public boolean verifyPatientEditInformationTabModule(Method method) {
- 		test=  extent.createTest(this.getClass().getSimpleName()+"::"+method.getName(), method.getName());
-		if(verifyPatientEditInformationPage())
-			System.out.println("Patient Edit Information verification passed");
-		else
-			System.out.println("Patient Edit Information verification failed");
-	return flag;
- 	}
- 	
+
  	@Test(description="Verify Patient Edit Information Module")
  	public boolean verifyPatientEditInformationPage(){
 	
  		try	{ 
- 			
- 			extent=CommonMethods.getReport(extent,test); 
- 			test = extent.createTest("Patient Overview Module");
+
 		
  			stepInfo="Click on Patient tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);

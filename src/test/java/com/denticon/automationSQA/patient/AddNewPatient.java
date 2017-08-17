@@ -1,48 +1,28 @@
 package com.denticon.automationSQA.patient;
-import java.lang.reflect.Method;
+
 import java.util.Properties;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.denticon.automationSQA.SeleniumSuite;
 import com.denticon.automationSQA.pom.IAddPatient;
 import com.denticon.automationSQA.utilities.CommonMethods;
 
-
-
-
-	public class AddNewPatient extends SeleniumSuite{
+public class AddNewPatient extends SeleniumSuite{
 		
-				String stepInfo=""; 
-				boolean flag=false; 
-			 	String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\AddNewPatient.properties"; 
-			 	Properties prop= new Properties();
-			 	
-			 	ExtentReports extent;
-				ExtentTest test; 
-				 
-		
-			public boolean verifyPatientTabModule(Method method) {
-			test=  extent.createTest(this.getClass().getSimpleName()+"::"+method.getName(), method.getName());
-		 		if(verifyAddNewPatientPage())
-		 			System.out.println("Patient page verification passed");
-		 		else
-		 			System.out.println("Patient page verification failed");
-				return flag;
-			}	
-			
-			
-			@Test(description="Verify Patient tab functionality")
-			public boolean verifyAddNewPatientPage(){
+String stepInfo=""; 
+boolean flag=false; 
+String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\AddNewPatient.properties"; 
+Properties prop= new Properties();
+
+@Test(description="Verify Patient tab functionality")
+public boolean verifyAddNewPatientPage(){
 				
 				try{ 
-					extent=CommonMethods.getReport(extent,test); 
-					test = extent.createTest("Add New Patient Module");
-		
+
+					Thread.sleep(3000);
 					stepInfo="Click on Patient tab";
 		 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 		 			test.log(Status.PASS, "Click on Patient tab"); 
@@ -84,7 +64,7 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 		 			
 		 			Thread.sleep(2000);
 		 			//Handle duplicate patient pop up
-		 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
+	//	 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
 		 			
 		 			
 		 			
@@ -256,7 +236,7 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 		 			
 		 			
 		 			//Handle duplicate patient pop up
-		 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
+	//	 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
 		 			
 		 			stepInfo="Go To ResponsibleParty";
 		 			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_GoToResponsibleParty);

@@ -1,13 +1,10 @@
 package com.denticon.automationSQA.patient;
 
-import java.lang.reflect.Method;
 import java.util.Properties;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.denticon.automationSQA.SeleniumSuite;
 import com.denticon.automationSQA.pom.IAddPatient;
@@ -19,27 +16,13 @@ public class AddNewMember extends SeleniumSuite {
 	boolean flag=false; 
  	String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\AddNewPatient.properties"; 
  	Properties prop= new Properties();
- 	ExtentReports extent;
-	ExtentTest test; 
- 	
-	
- 	public boolean verifyPatientTabModule(Method method) {
- 		test=  extent.createTest(this.getClass().getSimpleName()+"::"+method.getName(), method.getName());
-		if(verifyAddNewMemberPage())
-			System.out.println("Patient Add New Member page verification passed");
-		else
-			System.out.println("Patient Add New Member page verification failed");
-	return flag;
- 	}
- 	
+
  	@Test(description="Verify Add New Member Module")
  	public boolean verifyAddNewMemberPage(){
 	
  		try	{ 
- 			
- 			extent=CommonMethods.getReport(extent,test); 
- 			test = extent.createTest("Add New Member Module");
-		
+
+ 			Thread.sleep(5000);
  			stepInfo="Click on Patient tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			test.log(Status.PASS, "Click on Patient tab"); 
@@ -57,13 +40,17 @@ public class AddNewMember extends SeleniumSuite {
  			String firstName=CommonMethods.readDatafromProps(filePath,"FirstName");
  			flag=CommonMethods.sendText(IAddPatient.TXT_First_Name, firstName);
  			test.log(Status.PASS, "Enter First name");
- 			
+ 			Thread.sleep(5000);
  		
  			//Handle duplicate patient pop up
  //			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
- 			Thread.sleep(2000);
  			
- 			stepInfo="Enter Sex";
+ 			stepInfo="Enter Birthdate";
+ 			String birthdate = CommonMethods.readDatafromProps(filePath, "Bdate");
+ 			flag=CommonMethods.sendText(IAddPatient.TXT_Bdate, birthdate);
+ 			test.log(Status.PASS, "Enter Birthdate");
+ 			
+ 			stepInfo="Enter Sex";	
  			String sex = CommonMethods.readDatafromProps(filePath, "Sex");
  			flag=CommonMethods.selectFromList(IAddPatient.TXT_Sex, sex);
  			test.log(Status.PASS, "Enter Sex");
@@ -92,9 +79,9 @@ public class AddNewMember extends SeleniumSuite {
  			
  			stepInfo="Enter Medical Information";
  			test.log(Status.PASS, "Enter Medical Information");
- 			flag=CommonMethods.clickIfEnable(IAddPatient.CHK_Premedicate);
- 			flag=CommonMethods.clickIfEnable(IAddPatient.CHK_Asthma);
- 			flag=CommonMethods.clickIfEnable(IAddPatient.CHK_Coumadin);
+ 			flag=CommonMethods.clickIfEnable(IAddPatient.CHK_29_30_M_A);
+ 			flag=CommonMethods.clickIfEnable(IAddPatient.CHK_21_22_M_A);
+ 			
 
  			stepInfo="Go to Add Recall Information";
  			flag=CommonMethods.clickIfEnable(IAddPatient.BTN_AddRecallInformation);

@@ -53,7 +53,8 @@ public interface IPaymentPlan {
 	By INP_responsibleParty_prepaidOrManagedCare = By.id("//*[@id='RespPartyType_RespPartyType_9']");
 	By INP_responsibleParty_union = By.id("//*[@id='RespPartyType_RespPartyType_10']");
 	
-	
+	By SLC_PrintContract = By.xpath("//*[@id='btnPrintCont']");
+	By SLC_PrintCoupons = By.xpath("//*[@id='btnCoupon']");
 	
 	By TABLE_searchResults = By.id("dgSearchctl0");
 	
@@ -67,6 +68,9 @@ public interface IPaymentPlan {
 	By SLC_OrthoPaymentBillingCode = By.id("cmbInsBillingCode");
 	By TXT_TreatmentEndDate = By.id("txtTreatEndDate");
 	By CHK_StartPatientPaymentPlan = By.id("chkStartPatPlan");
+	
+	By TXT_Fee = By.xpath("//*[@id='txtTotalOrthoAmt_text']");
+	By TXT_EstimatePatient = By.xpath("//*[@id='txtPatShare_text']");
 	
 
 	

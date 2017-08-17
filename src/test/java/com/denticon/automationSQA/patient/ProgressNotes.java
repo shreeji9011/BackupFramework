@@ -31,7 +31,7 @@ public class ProgressNotes extends SeleniumSuite {
 			test.log(Status.PASS, "Click on Progress Notes");
 			stepInfo="Go to Add Progress Notes";
  			flag=CommonMethods.clickIfEnable(INotes. SLC_AddNewNote);
- 			flag=CommonMethods.selectFromList(INotes.SLC_PNSelectMacro,"2% Lidocaine 1/100K");
+ 			flag=CommonMethods.selectFromList(INotes.SLC_PNSelectMacro,"ABC");
  			flag=CommonMethods.clickIfEnable(INotes.SLC_PNSelectMacro);
  			flag=CommonMethods.clickIfEnable(INotes.SLC_MacroAddNotes);
  			flag=CommonMethods.sendText(INotes.TXT_PNnotes,"Add my Progress Note" );

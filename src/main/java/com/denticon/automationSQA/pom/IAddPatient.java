@@ -278,6 +278,13 @@ public interface IAddPatient {
 	By QUE_TestQuestion=By.xpath("//*[contains(text(),'Test Question ')]/following-sibling::td/select");
 	By QUE_WhoamI=By.xpath("//*[contains(text(),'Who am I?')]/following-sibling::td/select");
 	
+	By CHK_29_30_M_A = By.xpath("//*[@id='Y5400']");
+	By CHK_21_22_M_A = By.xpath("//*[@id='Y3000']");
+	
+	
+	
+	
+	
 	/////Recall Due Dates
 	
 	By TAB_RecallDueDate = By.linkText("Recall Due Dates");

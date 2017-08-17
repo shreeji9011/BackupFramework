@@ -20,9 +20,9 @@ public class RegularPaymentPlan extends SeleniumSuite{
 	@Test(description="Verify Search Patient functionality")
 	public boolean verifyRegularPaymentPlanModule() {
  		if(verifyRegularPaymentPlan())
- 			System.out.println("Payment Plan page verification passed");
+ 			System.out.println("Regular Payment Plan page verification passed");
  		else
- 			System.out.println("Payment Plan page verification failed");
+ 			System.out.println("Regular Payment Plan page verification failed");
 		return flag;
 	}	
 	
@@ -32,8 +32,8 @@ public class RegularPaymentPlan extends SeleniumSuite{
 		SearchPatient sp = new SearchPatient();
 		sp.SearchPatientByFirstNamePage("Terence");
 		
-		stepInfo="Select Regular Payment Plan";
-		flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
+			stepInfo="Select Regular Payment Plan";
+			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			flag=CommonMethods.mourseHoverIfEnable(IPaymentPlan.TAB_PaymentPlan); 
 			flag=CommonMethods.clickIfEnable(IPaymentPlan.TAB_RegularPaymentPlan);
 			
@@ -43,8 +43,8 @@ public class RegularPaymentPlan extends SeleniumSuite{
 			stepInfo="Accept Alert";
 			flag = CommonMethods.isAlertPresent();
 		
-	}
-	//*[@id="Table1"]/tbody/tr[2]/td[2]/table/tbody/tr[2]/td[1]
+	}   
+
 	public boolean verifyRegularPaymentPlan(){
 		
 		try{ 
@@ -52,6 +52,7 @@ public class RegularPaymentPlan extends SeleniumSuite{
 			SearchPatient sp = new SearchPatient();
 			sp.SearchPatientByFirstNamePage("Terence");
 			
+			Thread.sleep(5000);
 			stepInfo="Select Regular Payment Plan";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			flag=CommonMethods.mourseHoverIfEnable(IPaymentPlan.TAB_PaymentPlan); 
@@ -61,17 +62,20 @@ public class RegularPaymentPlan extends SeleniumSuite{
  			flag=CommonMethods.sendText(IPaymentPlan.TXT_patientBalanceAmount,"1");
  			
  			stepInfo="Enter First Billing Date";
- 			flag=CommonMethods.sendText(IPaymentPlan.TXT_firstBillingDate,"07182017");
+ 			flag=CommonMethods.sendText(IPaymentPlan.TXT_firstBillingDate,"08182017");
  			
  			stepInfo="Enter Number of Payments";
  			flag=CommonMethods.sendText(IPaymentPlan.TXT_noOfPayments,"4");
  			
+ 			Thread.sleep(3000);
  			stepInfo="save Regular payment";
  			flag=CommonMethods.clickIfEnable(IPaymentPlan.BTN_save);
  			
  			stepInfo="accept alert box";
  			flag=CommonMethods.isAlertPresent();
  			
+ 			flag=CommonMethods.clickIfEnable(IPaymentPlan.SLC_PrintContract);
+ 			flag=CommonMethods.clickIfEnable(IPaymentPlan.SLC_PrintCoupons);
  			 			 
  		} catch (Exception e) { 
  			e.printStackTrace(); 

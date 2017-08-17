@@ -44,7 +44,7 @@ public interface ISearchPatient {
 	By INP_responsibleParty_prepaidOrManagedCare = By.id("RespPartyType_RespPartyType_9");
 	By INP_responsibleParty_union = By.id("RespPartyType_RespPartyType_10");
 	
-	By INP_patienttype_ABArabicspeaking = By.id("PatientType_PatType_0");
+	By INP_patienttype_Cash = By.id("PatientType_PatType_0");
 	By INP_patienttype_C1ClassI = By.id("PatientType_PatType_1");
 	By INP_patienttype_C2ClassII = By.id("PatientType_PatType_2");
 	By INP_patienttype_C3ClassIII = By.id("PatientType_PatType_3");

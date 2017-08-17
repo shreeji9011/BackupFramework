@@ -12,8 +12,9 @@ public interface IPrescription {
 	By BTN_Print = By.xpath("//*[@id='btnPrint']");
 	By PrintAllPrescriptionToday = By.xpath("//*[@id='chkRptPrintAll']");
 	By PrintSize_Wide = By.xpath("//*[@id='rbWide']");
-	By BTN_PrintPreview = By.xpath("//*[@id='rbWide']");
+	By BTN_PrintPreview = By.xpath("//*[@id='btnPrintPres']");
 	By BTN_CancelAddNew = By.xpath("//*[@id='btnCancelAddNew']");
-	
+	By CLK_DeletePre = By.xpath("//*[@id='chkSelect456']");
+	By BTW_Delete = By.xpath("//*[@id='btnDelete']");
 	
 }

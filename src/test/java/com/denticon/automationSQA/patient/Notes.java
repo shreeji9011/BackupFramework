@@ -20,11 +20,11 @@ public boolean verifyPatientNotesPage(){
 	
 	try	{ 
 		
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			stepInfo="Go to Search Patient Tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			test.log(Status.PASS, "Go to Patient Tab"); 
-		
+			Thread.sleep(5000);
 			flag=CommonMethods.clickIfEnable(INotes.TAB_Notes);
 			test.log(Status.PASS, "Go to Search Notes Tab"); 
 
@@ -65,11 +65,11 @@ public boolean verifyResponsiblePartyNotesPage(){
 	
 	try	{ 
 		
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			stepInfo="Go to Search Patient Tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			test.log(Status.PASS, "Go to Patient Tab"); 
-		
+			Thread.sleep(5000);
 			flag=CommonMethods.clickIfEnable(INotes.TAB_Notes);
 			test.log(Status.PASS, "Go to Search Notes Tab"); 
 
@@ -114,11 +114,11 @@ public boolean verifyFinancialNotesPage(){
 	
 	try	{ 
 		
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			stepInfo="Go to Search Patient Tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			test.log(Status.PASS, "Go to Patient Tab"); 
-		
+			Thread.sleep(5000);
 			flag=CommonMethods.clickIfEnable(INotes.TAB_Notes);
 			test.log(Status.PASS, "Go to Search Notes Tab"); 
 
@@ -160,11 +160,11 @@ public boolean verifyAppointmentNotesPage(){
 	
 	try	{ 
 		
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			stepInfo="Go to Search Patient Tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			test.log(Status.PASS, "Go to Patient Tab"); 
-		
+			Thread.sleep(5000);
 			flag=CommonMethods.clickIfEnable(INotes.TAB_Notes);
 			test.log(Status.PASS, "Go to Search Notes Tab"); 
 
@@ -206,11 +206,11 @@ public boolean verifySystemNotesPage(){
 	
 	try	{ 
 		
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			stepInfo="Go to Search Patient Tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			test.log(Status.PASS, "Go to Patient Tab"); 
-		
+			Thread.sleep(5000);
 			flag=CommonMethods.clickIfEnable(INotes.TAB_Notes);
 			test.log(Status.PASS, "Go to Search Notes Tab"); 
 

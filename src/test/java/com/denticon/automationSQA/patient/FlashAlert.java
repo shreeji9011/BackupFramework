@@ -1,13 +1,8 @@
 package com.denticon.automationSQA.patient;
 
-import java.lang.reflect.Method;
-import java.util.Properties;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.denticon.automationSQA.SeleniumSuite;
 import com.denticon.automationSQA.pom.IAddPatient;
@@ -19,29 +14,13 @@ public class FlashAlert extends SeleniumSuite {
 	String stepInfo=""; 
 	boolean flag=false; 
 
- 	Properties prop= new Properties();
- 	ExtentReports extent;
-	ExtentTest test; 
- 	
-	
- 	public boolean verifyPatientFlashAlertTabModule(Method method) {
- 		test=  extent.createTest(this.getClass().getSimpleName()+"::"+method.getName(), method.getName());
-		if(verifyFlashAlertPage())
-			System.out.println("Patient Flash Alert page verification passed");
-		else
-			System.out.println("Patient Flash Alert page verification failed");
-	return flag;
- 	}
- 	
 
+ 	
  	@Test(description="Verify Flash Alert Module")
  	public boolean verifyFlashAlertPage(){
 	
  		try	{ 
- 			
- 			extent=CommonMethods.getReport(extent,test); 
- 			test = extent.createTest("Patient Flash Alert Module");
-		
+ 			Thread.sleep(5000);
  			stepInfo="Click on Patient tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			test.log(Status.PASS, "Click on Patient tab"); 
@@ -66,12 +45,12 @@ public class FlashAlert extends SeleniumSuite {
 			stepInfo="Click on Save"; 
 			flag=CommonMethods.clickIfEnable(IFlashAlert.SLC_Save);
 			test.log(Status.PASS, "Click on Save");
-			
+			Thread.sleep(2000);
 			stepInfo="Click on Deactivate Flash Alert"; 
 			flag=CommonMethods.clickIfEnable(IFlashAlert.SLC_Deactivate);
 			test.log(Status.PASS, "Click on  Deactivate Flash Alert");
 			
-			
+			Thread.sleep(2000);
 			stepInfo="Click on edit Flash Alert"; 
 			flag=CommonMethods.clickIfEnable(IFlashAlert.SLC_Edit);
 			flag=CommonMethods.clickIfEnable(IFlashAlert.TXT_FlashNote);

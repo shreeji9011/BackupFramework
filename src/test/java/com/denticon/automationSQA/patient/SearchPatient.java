@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 import com.aventstack.extentreports.Status;
 import com.denticon.automationSQA.DriverManager;
 import com.denticon.automationSQA.SeleniumSuite;
@@ -119,7 +118,7 @@ public boolean verifyPatientType() {
  			test.log(Status.PASS, "Select Search By Patient Type "); 
  			
  			stepInfo="Enter Patient Type"; 
- 			flag=CommonMethods.clickIfEnable(ISearchPatient.INP_patienttype_C1ClassI); 
+ 			flag=CommonMethods.clickIfEnable(ISearchPatient.INP_patienttype_Cash); 
  			test.log(Status.PASS, "Enter Patient Type"); 
  			
  			stepInfo="Search Patient Type";
@@ -445,7 +444,7 @@ public boolean verifyPatientType() {
  			test.log(Status.PASS, "Select Search By Patient ID"); 
  			
  			stepInfo="Enter  Patient ID"; 
- 			flag=CommonMethods.sendText(ISearchPatient.TXT_searchText,"145");  
+ 			flag=CommonMethods.sendText(ISearchPatient.TXT_searchText,"114");  
  			test.log(Status.PASS, "Enter Patient ID"); 
  			
  			stepInfo="Search Patient ID";
@@ -469,7 +468,7 @@ public boolean verifyPatientType() {
 		public boolean verifyResponsiblePartyType() {
 	 		
 			try{ 
-			Thread.sleep(1000);	
+			Thread.sleep(3000);	
  			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -481,7 +480,7 @@ public boolean verifyPatientType() {
  			flag=CommonMethods.clickIfEnable(ISearchPatient.RADIOBTN_searchForResponsibleParty);
  			flag=CommonMethods.clickIfEnable(ISearchPatient.RADIOBTN_searchByResponsiblePatientType); 
  			test.log(Status.PASS, "Select Search By Responsible Party Type "); 
- 			
+ 			Thread.sleep(3000);	
  			stepInfo="Enter Responsible Party type as cash"; 
  			flag=CommonMethods.clickIfEnable(ISearchPatient.INP_responsibleParty_cash); 
  			test.log(Status.PASS, "Enter Responsible Party type as cash"); 
@@ -509,7 +508,7 @@ public boolean verifyPatientType() {
 		public boolean verifyResponsiblePartyLastName() {
 	 		
 			try{ 
-				
+			Thread.sleep(5000);		
 			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -578,10 +577,11 @@ public boolean verifyPatientType() {
  			flag=CommonMethods.clickIfEnable(ISearchPatient.BTN_search);	
  			test.log(Status.PASS, "Search Patient "); 
  			
- 			Thread.sleep(1000);
+ 			Thread.sleep(1000);	
  			
  			stepInfo="Select First Patient from Result";
  			flag = selectNthRowFromResponsiblePartyResults(ISearchPatient.TABLE_searchResults, 1);
+ 			Thread.sleep(3000);	
  			flag=CommonMethods.clickIfEnable(ISearchPatient.BTN_Save);
  			test.log(Status.PASS, "Select First Patient from Result"); 
 			test.log(Status.PASS, "Navigate to Overview Tab");							
@@ -597,7 +597,7 @@ public boolean verifyPatientType() {
 		public boolean verifyResponsiblePartySSN() {
 	 		
 			try{ 
-			Thread.sleep(1000);	
+			Thread.sleep(3000);	
 			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -641,7 +641,7 @@ public boolean verifyPatientType() {
 		public boolean verifyResponsiblePartyEmail() {
 	 		
 			try{ 
-				
+			Thread.sleep(3000);		
 			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -679,13 +679,14 @@ public boolean verifyPatientType() {
  		} 		
 		return flag;
 	 	}
+		
 ////RP BirthDate /////
 			
 		@Test(description="Verify Patient tab functionality")
 		public boolean verifyResponsiblePartyBirthDate() {
 	 		
 			try{ 
-			Thread.sleep(1000);	
+			Thread.sleep(3000);	
 			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -728,7 +729,7 @@ public boolean verifyPatientType() {
 		public boolean verifyResponsiblePartyHomePhone() {
 	 		
 			try{ 
-				
+				Thread.sleep(3000);		
 			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -753,7 +754,7 @@ public boolean verifyPatientType() {
  			flag=CommonMethods.clickIfEnable(ISearchPatient.BTN_search);	
  			test.log(Status.PASS, "Search Patient "); 
  			
- 			Thread.sleep(1000);
+ 			Thread.sleep(3000);	
  			
  			stepInfo="Select First Patient from Result";
  			flag = selectNthRowFromResponsiblePartyResults(ISearchPatient.TABLE_searchResults, 1);
@@ -772,7 +773,7 @@ public boolean verifyPatientType() {
 		public boolean verifyResponsiblePartyCellPhone() {
 	 		
 			try{ 
-				
+				Thread.sleep(3000);		
 			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -816,7 +817,7 @@ public boolean verifyPatientType() {
 		public boolean verifyResponsiblePartyWorkPhone() {
 	 		
 			try{ 
-				Thread.sleep(1000);	
+				Thread.sleep(3000);	
 			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -862,7 +863,7 @@ public boolean verifyPatientType() {
 	 		
 			try{ 
 				
-				Thread.sleep(1000);
+				Thread.sleep(3000);	
 			stepInfo="Go to Search Patient Tab";
  			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
  			test.log(Status.PASS, "Go to Patient Tab"); 
@@ -876,7 +877,7 @@ public boolean verifyPatientType() {
  			
  			stepInfo="Select Search By  Responsible Party ID";
  			flag=CommonMethods.clickIfEnable(ISearchPatient.INP_responsibleParty_ID); 
- 			flag=CommonMethods.sendText(ISearchPatient.TXT_searchText,"145");  
+ 			flag=CommonMethods.sendText(ISearchPatient.TXT_searchText,"543");  
  			test.log(Status.PASS, "Enter Patient ID"); 
  			
  			stepInfo="Search Patient";
