@@ -69,7 +69,7 @@ public class Prescription extends SeleniumSuite {
  			Thread.sleep(3000);
 			flag=CommonMethods.clickIfEnable(IPrescription.SLC_QuickPrint);
  			test.log(Status.PASS, "Quick Print All Today's Prescription");
-
+ 			Thread.sleep(5000);
 	} catch (Exception e) { 
  			e.printStackTrace(); 
  			Assert.fail(); 

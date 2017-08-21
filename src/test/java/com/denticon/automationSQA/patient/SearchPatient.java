@@ -464,7 +464,7 @@ public boolean verifyPatientType() {
  			
 /////RP Type CASH //////
  			
-		@Test(description="Verify Patient tab functionality")
+//		@Test(description="Verify Patient tab functionality")
 		public boolean verifyResponsiblePartyType() {
 	 		
 			try{ 

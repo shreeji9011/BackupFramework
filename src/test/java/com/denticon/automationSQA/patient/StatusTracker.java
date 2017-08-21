@@ -37,6 +37,7 @@ public boolean verifyStatusTrackerPage(){
 			stepInfo="Save Note";
 			flag=CommonMethods.clickIfEnable(IStatusTracker.SLC_Calander);
 			flag=CommonMethods.clickIfEnable(IStatusTracker.SLC_NextDayDate);
+			Thread.sleep(2000);
 			flag=CommonMethods.clickIfEnable(IStatusTracker.SLC_Save);	
 			test.log(Status.PASS, "Save Note"); 
 			
