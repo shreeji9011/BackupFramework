@@ -956,7 +956,7 @@ public boolean SearchPatientByFirstNamePage(String FirstName){
  		WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 20);
  	    try {
  	    	Thread.sleep(2000);
- 	    	WebElement ele = DriverManager.getDriver().findElement(By.xpath("//tr[@id='dgSearchctl0__"+(n-1)+"']//a[@id='dgSearch__ctl0__ctl4_lnkRespID']"));
+ 	    	WebElement ele = DriverManager.getDriver().findElement(By.xpath("//tr[@id='dgSearchctl0__"+(n-1)+"']//a']"));
  	    	wait.until(ExpectedConditions.visibilityOf(ele));
  	    	ele.click();
  	        return true;

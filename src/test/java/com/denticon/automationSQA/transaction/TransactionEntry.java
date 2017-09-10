@@ -15,12 +15,12 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 
 
 public class TransactionEntry extends SeleniumSuite{  
-	String stepInfo=""; 
+		String stepInfo=""; 
 		boolean flag=false; 
 	 	String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\TreatmentPlan.properties"; 
 	 	Properties prop= new Properties();
 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry")
+//	 	@Test(description="previously added treatment should be displayed in transaction entry")					/*   PASS   */	
 	 	public boolean verifyPreviousTreatmentPlanInTransactionEntry() {
 	 		
 	 	try{ 
@@ -31,14 +31,12 @@ public class TransactionEntry extends SeleniumSuite{
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TreatmentPlan);
  			
  			stepInfo="Enter Code"; 
- 			flag=CommonMethods.sendText(ITransaction.TXT_ProcedureCode,"D0140");
+ 			flag=CommonMethods.sendText(ITransaction.TXT_ProcedureCode,"D0150");
  			int noOfRows = TreatmentPlan.noOfTreatments();
  			
+ 			Thread.sleep(3000);
  			TreatmentPlan.checkLastTreatmentRow(noOfRows+1);
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_PostToLedger);
- 			
- 			
- 			
  			
  			stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
@@ -47,7 +45,7 @@ public class TransactionEntry extends SeleniumSuite{
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TransactionEntry);
  			noOfRows = noOfTreatmentsInTransactionEntry();
  			Thread.sleep(4000);
- 			Assert.assertTrue(returnDataFromTreamtmentTable("Code", noOfRows).equals("D0140"));
+ 			Assert.assertTrue(returnDataFromTreamtmentTable("Code", noOfRows).equals("D0150"));
 	 	
 	 	} catch (Exception e) { 
  			e.printStackTrace(); 
@@ -57,7 +55,7 @@ public class TransactionEntry extends SeleniumSuite{
 		return flag; 		
 	 	}
 	 	
-	 	@Test(description="Verify Patient tab functionality")
+	 	@Test(description="verify Add Treatment Plan Using Different Codes")
 		public boolean verifyAddTreatmentPlanUsingDifferentCodes() {
 	 		
 			try{ 
@@ -314,7 +312,7 @@ public class TransactionEntry extends SeleniumSuite{
 			return flag;
 		 	}
 	 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry")
+//	 	@Test(description="editTreatmentPage")			/*   PASS   */		
 	 	public boolean editTreatmentPage() {
 	 		
 	 	try{ 
@@ -326,10 +324,9 @@ public class TransactionEntry extends SeleniumSuite{
  			
  			stepInfo="Enter Code"; 
  			int noOfRows = noOfTreatmentsInTransactionEntry();
- 			flag=CommonMethods.sendText(ITransaction.TXT_TE_ProcedureCode,"D0140");
- 			
- 			Thread.sleep(4000);
- 			
+ 			flag=CommonMethods.sendText(ITransaction.TXT_TE_ProcedureCode,"D0150");
+ 			flag=CommonMethods.clickIfEnable(ITransaction.SLC_D0150PC);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_AddPC);
  			stepInfo="Click on date on the added treatment"; 
  			clickOnDateFromTreatmentTable(noOfRows+1);
  			
@@ -347,7 +344,7 @@ public class TransactionEntry extends SeleniumSuite{
 		return flag; 		
 	 	}
 	 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry")
+//	 	@Test(description="LedgerPage")				/*   PASS   */			
 	 	public boolean LedgerPage() {
 	 		
 	 	try{ 
@@ -375,10 +372,12 @@ public class TransactionEntry extends SeleniumSuite{
 		return flag; 		
 	 	}
 	 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry")
+	 	
+//	 	@Test(description="createClaim")					/*   PASS   */
 	 	public boolean createClaim() {
 	 		
 	 	try{ 
+	 		Thread.sleep(6000);
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -386,17 +385,19 @@ public class TransactionEntry extends SeleniumSuite{
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TransactionEntry);
  			
  			stepInfo="Enter Code"; 
- 			flag=CommonMethods.sendText(ITransaction.TXT_TE_ProcedureCode,"D0140");
- 			
+ 			flag=CommonMethods.sendText(ITransaction.TXT_TE_ProcedureCode,"D0150");
+ 			flag=CommonMethods.clickIfEnable(ITransaction.SLC_D0150PC);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_AddPC);
  			Thread.sleep(4000);
- 			int noOfRows = noOfTreatmentsInTransactionEntry();		
+ //			int noOfRows = noOfTreatmentsInTransactionEntry();		
  			stepInfo="Create Claim"; 
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_CreateClaim);
+ 			Thread.sleep(2000);
  			Assert.assertTrue(CommonMethods.isElementPresent(ITransaction.TITL_TE_ClaimPage));
  			
- 			stepInfo = "Delete Claim";
- 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DeleteClaim);
- 			flag=CommonMethods.isAlertPresent();
+ //			stepInfo = "Delete Claim";
+ //			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DeleteClaim);
+ //			flag=CommonMethods.isAlertPresent();
  			
  			
  				 	
@@ -408,10 +409,12 @@ public class TransactionEntry extends SeleniumSuite{
 		return flag; 		
 	 	}
 	 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry")
+	 	
+//	 	@Test(description="pre-authorization list")				/*   PASS   */
 	 	public boolean preAuthTest() {
 	 		
 	 	try{ 
+	 		Thread.sleep(5000);
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -433,7 +436,7 @@ public class TransactionEntry extends SeleniumSuite{
 		return flag; 		
 	 	}
 	 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry", dependsOnMethods="createClaim")
+//	 	@Test(description="insurancePayment")				/*   PASS   */
 	 	public boolean insurancePayment() {
 	 		
 	 	try{ 
@@ -443,10 +446,8 @@ public class TransactionEntry extends SeleniumSuite{
 	 		stepInfo="Click on treatment plan"; 
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_InsurancePayment);
  			
- 			
- 			stepInfo="Click on date field"; 
- 			flag=CommonMethods.clickIfEnable(ITransaction.LNK_InsurancePaymentDate);
- 			flag=CommonMethods.clickIfEnable(ITransaction.CHK_TreamentForClaims);
+ 			flag=CommonMethods.sendText(ITransaction. Txt_InsAmount,"1");
+
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_InsuranceApply);		
  			
  				 	
@@ -458,10 +459,12 @@ public class TransactionEntry extends SeleniumSuite{
 		return flag; 		
 	 	}
 	 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry", dependsOnMethods="createClaim")
+	 	
+//	 	@Test(description="batchPatientPayment")							 /*   PASS   */
 	 	public boolean batchPatientPayment() {
 	 		
 	 	try{ 
+	 		Thread.sleep(5000);
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -470,14 +473,13 @@ public class TransactionEntry extends SeleniumSuite{
  			
  			stepInfo="Click on date field"; 
  			flag=CommonMethods.clickIfEnable(ITransaction.RDO_Batch_FirstName);
- 			flag=CommonMethods.sendText(ITransaction.TXT_search,"Terence");
+ 			flag=CommonMethods.sendText(ITransaction.TXT_search,"Rahul");
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_searchPatient);
- 			flag=CommonMethods.clickIfEnable(ITransaction.LST_firstPatient);
- 		
- 			flag=CommonMethods.clickIfEnable(ITransaction.LST_payment);
- 			flag=CommonMethods.clickIfEnable(ITransaction.SEL_procedureToPost);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.SLC_Patient);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.Chk_ProcedureToPost);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.Paymenttype);			
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_BatchPaymentApply);
- 				
+ 			
  				 	
 	 	} catch (Exception e) { 
  			e.printStackTrace(); 
@@ -486,17 +488,35 @@ public class TransactionEntry extends SeleniumSuite{
  		} 		
 		return flag; 		
 	 	}
+	 	
+	 	
 	 	//, dependsOnMethods="createClaim"
-	 	@Test(description="previously added treatment should be displayed in transaction entry")
+	 	
+	 	@Test(description = "batchInsurancePayment")                    /*   PASS   */
 	 	public boolean batchInsurancePayment() {
 	 		
 	 	try{ 
+	 		Thread.sleep(5000);
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
 	 		stepInfo="Click on treatment plan"; 
- 			flag=CommonMethods.clickIfEnable(ITransaction.TAB_BatchPatientPayment);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.TAB_BatchInsurancePayment );
+ 			Thread.sleep(3000);
+ 			flag=CommonMethods.selectFromList(ITransaction.SEL_Carrier,"21_22_D_C");
  			
+ 			flag=CommonMethods.sendText(ITransaction.TXT_Chartno,"145");
+ 			
+ 			flag=CommonMethods.sendText(ITransaction.TXT_CheckAmount,"1");
+ 			
+ 			flag=CommonMethods.clickIfEnable(ITransaction.LNK_Date);
+ 			
+ 			flag=CommonMethods.clickIfEnable(ITransaction.SLC_Apply);
+ 			
+ 			Assert.assertTrue(CommonMethods.isElementPresent(ITransaction.Title_BIP));
+ 			
+ 			Thread.sleep(3000);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.SLC_Cancel);	
  			//?check treatment for above selected claims ???
  					 	
 	 	} catch (Exception e) { 

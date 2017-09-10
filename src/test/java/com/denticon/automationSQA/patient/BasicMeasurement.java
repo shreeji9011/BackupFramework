@@ -49,7 +49,7 @@ public class BasicMeasurement extends SeleniumSuite {
 	 	}
 	
 	
-	@Test
+	@Test(description="Verify cancel page Module",dependsOnMethods= "verifyBasicMeasurementPage")
 	public boolean verifyBasicMeasurementCancelPage(){
 		
 		try	{ 
@@ -78,7 +78,7 @@ public class BasicMeasurement extends SeleniumSuite {
 	 	}
 	
 	
-	@Test
+	@Test(description="Verify edit page Module",dependsOnMethods= "verifyBasicMeasurementCancelPage")
 	public boolean verifyBasicMeasurementEditPage(){
 		
 		try	{ 
@@ -106,7 +106,7 @@ public class BasicMeasurement extends SeleniumSuite {
 		return flag;
 	 	}
 	
-	@Test
+	@Test(description="Verify delete page Module",dependsOnMethods= "verifyBasicMeasurementEditPage")
 	public boolean verifyBasicMeasurementDeletePage(){
 		
 		try	{ 

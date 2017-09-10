@@ -10,6 +10,7 @@ public interface ITransaction {
 	By TAB_PreAuthorizationList = By.linkText("Pre-Authorization List");
 	By TAB_InsurancePayment = By.linkText("Insurance Payment");
 	By TAB_BatchPatientPayment = By.linkText("Batch Patient Payment");
+	By TAB_BatchInsurancePayment = By.linkText("Batch Insurance Payment");
 	By BTN_implantService = By.id("AddProcedure_cmdImplant");
 	By BTN_periodontics = By.id("AddProcedure_cmdPeriodontics");
 	By BTN_restorative = By.id("AddProcedure_cmdRestorative");
@@ -34,6 +35,10 @@ public interface ITransaction {
 	
 	By TXT_ProcedureCode = By.id("AddProcedure_txtADACode");
 	
+	By SLC_D0150PC = By.xpath("//*[@id='ts_tbPnlAddProc_AddProcedure_tblProcs']/tbody/tr[2]/td[1]");
+	By BTN_AddPC = By.xpath("//*[@id='ts_tbPnlAddProc_AddProcedure_btnAddProc']");
+	
+	
 	By TXT_UserCode = By.id("AddProcedure_txtShortDescr");
 	By FRM_ToothSurfacePopup = By.id("ifrThSurf");
 	String procedureFromProcedureTableGenericXpath = "//table[@id='AddProcedure_tblProcs']//tr[2]//td";
@@ -46,7 +51,7 @@ public interface ITransaction {
 	By BTN_SelectQuadrant= By.id("btnQuad1");
 	By LNK_UpperLeftQuadrant = By.id("quadUL");
 	By TXT_Surfaces =By.id("chkMesial");
-	By BTN_selectToothNumber=By.id("btntno1");
+	By BTN_selectToothNumber=By.id("th1");
 	By LNK_selectToothA= By.xpath("//table[@id='tblValidTNos']//td[@ustno='A']");
 	By BTN_saveToothNumber = By.id("cmdAddThSurf");
 	By BTN_selectSurfact= By.id("btnsurf1");
@@ -105,10 +110,13 @@ public interface ITransaction {
 	By BTN_TE_AllMedSave = By.id("btnSave");
 	String TE_procedureFromProcedureTable = "//table[@id='ts_tbPnlAddProc_AddProcedure_tblProcs']//tr[2]//td";
 	By ROW_TE_ProcedureFromProcedureTable= By.xpath(TE_procedureFromProcedureTable);
-	By ROW_TE_AmalgamOneSurfacePrimary = By.xpath("//table[@id='ts_tbPnlAddProc_AddProcedure_tblProcs']//tr//td[text()='D2140A']");
+	By ROW_TE_AmalgamOneSurfacePrimary = By.xpath("//table[@id='AddProcedure_tblProcs']//tr//td[text()='D2140']");
 	By TXT_TE_UserCode = By.id("ts_tbPnlAddProc_AddProcedure_txtShortDescr");
 	By TXT_TE_Description = By.id("ts_tbPnlAddProc_AddProcedure_txtDescr");
 	String TE_LastRow = "//table[@id='dgTran_ctl00']/tbody/tr[lastRow]";
+	
+	///////
+	
 	
 	By TITL_EditTreatment = By.xpath("//span[contains(text(),'Edit Treatment')]");
 	By TITL_TE_LedgerPage = By.xpath("//span[contains(text(),'Account Ledger')]");
@@ -123,25 +131,40 @@ public interface ITransaction {
 	//Pre-Authorization
 	By LNK_PreAuthDate = By.xpath("//table[@id='dgPreAuth']/tbody/tr/td/a");
 	By TITL_PreAuthPage = By.xpath("//span[contains(text(),'Primary Dental Pre-Authorization Detail')]");
+	By BTW_Save =  By.id("btnSave");
+	By BTW_DeletePreAuth = By.id("btnDelete");
+	By BTW_DirectPrint = By.id("btnDirectPrint");
+	By BTW_UpdateStatus = By.id("btnUpdateStatus");
+	By BTW_Close = By.id("btnClose");
+	
 	
 	//Insurance Payment
-	By LNK_InsurancePaymentDate = By.xpath("//table[@id='dgPatClaims']/tbody/tr/td/a");
-	By CHK_TreamentForClaims = By.id("dgPatClaimDetails__ctl1_chkCheckAll");
-	By BTN_InsuranceApply = By.id("btnApply");
+	By Txt_InsAmount = By.xpath("//*[@id='txtPayAmount_text']");
+	By BTN_InsuranceApply = By.id("btnApplyPrevBal");
 	
 	//Batch Payment
 	By RDO_Batch_FirstName = By.id("rdoFirstName");
 	By TXT_search =By.id("txtSearchPat1");
 	By BTN_searchPatient = By.id("btnSearchPat");
 	By LST_firstPatient = By.xpath("//table[@id='dgSearchPat']/tbody/tr[1]/td[1]");
+	By SLC_Patient = By.xpath(".//*[@id='dgSearchPat']/tbody/tr[2]/td[2]");
 	By LST_payment = By.xpath("//td[contains(text(),'PP005')]");
-	By SEL_procedureToPost = By.xpath("//table[@id='PaymentPROC_tblProcedures']/tbody/tr/td/input[1]");
+	
+	By Paymenttype = By.xpath("//*[@id='PaymentPROC_tblPayTypes']/tbody/tr[4]/td[2]");
 	By BTN_BatchPaymentApply = By.id("PaymentPROC_btnApply");
+	By Title_BIP = By.xpath("//*[@id='HelpBar_SpanPageTitle']");
+	By TXT_Amount = By.id("PaymentPROC_txtAmount_text");
+	By Chk_ProcedureToPost = By.xpath("//*[@id='chkCheckOne_1']");
+	
 	
 	//Batch Insurance
 	
 	By SEL_Carrier = By.id("CarriersDental");
 	By LNK_Date = By.xpath("//table[@id='dgPatClaims']/tbody/tr[2]/td[1]");
+	By TXT_Chartno = By.id("txtCheckNo");
+	By TXT_CheckAmount = By.id("txtCheckAmount_text");
+	By SLC_Apply = By.id("btnApply");
+	By SLC_Cancel = By.id("btnNext");
 	//?check treatment for above selected claims ???
 	
 

@@ -69,7 +69,7 @@ public class TreatmentPlan extends SeleniumSuite{
 		 	}
 		
 	 	
-	@Test(description="Verify Patient tab functionality")
+	@Test(description="Verify Patient tab functionality")			/* PASS */
 	public boolean verifyAddTreatmentPlanUsingToothNumber() {
  		
 		try{ 
@@ -188,6 +188,8 @@ public class TreatmentPlan extends SeleniumSuite{
 		return flag;
 	 	}
 	
+	
+	
 	@Test(description="Verify Patient tab functionality")
 	public boolean verifyAddTreatmentPlanUsingUserCode() {
  		
@@ -217,6 +219,8 @@ public class TreatmentPlan extends SeleniumSuite{
 	 		
 		return flag;
 	 	}
+	
+	
 	@Test(description="Verify Patient tab functionality")
 	public boolean verifyAddTreatmentPlanFromCategories() {
  		
@@ -391,7 +395,8 @@ public class TreatmentPlan extends SeleniumSuite{
 		return flag;
 	 	}
 	
-	@Test(description="Verify Patient tab functionality")
+	
+	@Test(description="change Added Treatment Plan Details")
 	public boolean changeAddedTreatmentPlanDetails() {
  		
 		try{ 
@@ -484,6 +489,8 @@ public class TreatmentPlan extends SeleniumSuite{
 	 		
 		return flag;
 	 	}
+	
+	
 	public static int noOfTreatments(){
 		
 		int noOfRows = DriverManager.getDriver().findElements(ITransaction.ROWS_preexistingTreatment).size();

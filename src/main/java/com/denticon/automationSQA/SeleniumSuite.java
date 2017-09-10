@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -63,13 +63,14 @@ public static ExtentTest test;
 			com.denticon.automationSQA.DriverManager.setWebDriver(driver);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
+		login();
 		return driver;
 	}
 	
 	  
 	@BeforeMethod
 	public void beforeTest(Method method){
-		login();
+		
 		test=  extent.createTest(this.getClass().getSimpleName()+"::"+method.getName(), method.getName());
 	}
 	
@@ -139,7 +140,7 @@ public static ExtentTest test;
 	        extent.flush();
 	    }
 	 
-		 logout();
+		 
 	//	 extent.endTest(test);
 	        
 	        
@@ -168,8 +169,11 @@ public static ExtentTest test;
 	
  	@AfterSuite
 	public void afterSuite(){
-		 
+ 		logout();
 		extent.flush(); 
+		if(driver.switchTo().alert() != null ){
+			driver.switchTo().alert().accept();
+		}
 		driver.close();
 		driver.quit();
 	}						

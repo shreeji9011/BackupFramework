@@ -2,42 +2,71 @@ package com.denticon.automationSQA.utilities;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.Transferable;
+import java.awt.image.BufferedImage;
+import java.io.File;  
+import java.io.FileInputStream;  
+import java.io.FileNotFoundException;  
+import java.util.List;  
+import java.util.Properties;
+
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.Transferable;
+import java.awt.image.BufferedImage;
+import java.io.File;  
+import java.io.FileInputStream;  
+import java.io.FileNotFoundException;  
+import java.util.List;  
+import java.util.Properties;
+
+import javax.imageio.ImageIO;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 import org.testng.ITestResult;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import com.denticon.automationSQA.DriverManager;
-import com.denticon.automationSQA.GetFullPageScreenShot;
-
-
-
-
 
 public class CommonMethods{  
 	   	
@@ -47,9 +76,6 @@ public class CommonMethods{
 		public static ExtentReports extent;
 	    public static ExtentTest test;
 	         
-
-	
-
 	public static List<WebElement> getListelements(By lst){  
   
 		List<WebElement> lstcommon= com.denticon.automationSQA.DriverManager.getDriver().findElements(lst);  
@@ -255,9 +281,34 @@ public class CommonMethods{
 			}catch(Exception e){
 				return flag;  
 			}
-			
-			
 		}
-	 
-	 }
-	 
+			public static void getscreenshot() throws Exception 
+		      {
+		              File scrFile = ((TakesScreenshot)DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
+		           //The below method will save the screen shot in d drive with name "screenshot.png"
+		              FileUtils.copyFile(scrFile, new File("D:\\screenshot.png"));
+		      }
+			
+			public static void captureScreen(String fileName) throws Exception {
+				   Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+				   Rectangle screenRectangle = new Rectangle(screenSize);
+				   Robot robot = new Robot();
+				   BufferedImage image = robot.createScreenCapture(screenRectangle);
+				   ImageIO.write(image, "png", new File(fileName));
+				   //Toolkit.getDefaultToolkit().getSystemClipboard().setContents( image, null);
+				}
+			
+			public static boolean pasteScreen(By loc) {
+				boolean foundAlert = false;
+		 	    try {
+		 	    	
+		 	    	
+		 	        WebElement webelement = getWebElement(loc);
+		 	        webelement.sendKeys(Keys.CONTROL+"v");
+		 	        foundAlert = true;
+		 	    } catch (Exception eTO) {
+		 	        foundAlert = false;
+		 	    }
+		 	    return foundAlert;
+			}   	 
+		 }
