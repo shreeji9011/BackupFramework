@@ -20,7 +20,7 @@ public class ProgressNotes extends SeleniumSuite {
 
 		String ProgressNotes;
 
-	 	//@Test(description="Verify Add Notes Module")
+	 	@Test(description="Verify Add Notes Module")
 	 	public boolean verifyAddNotesModule(){
 		
 	 		try	{ 
@@ -30,7 +30,9 @@ public class ProgressNotes extends SeleniumSuite {
 	 			flag=CommonMethods.clickIfEnable(INotes.SLC_LastPatient);
 				flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			//	test.log(Status.PASS, "Click on Patient tab"); 
-				
+	 		//	TransactionEntry te= new TransactionEntry();
+		 	//	te.SearchPatientByPatientID("916");
+
 				stepInfo="Click on Progress Notes"; 
 				flag=CommonMethods.clickIfEnable(INotes.TAB_PNotes);
 		//		test.log(Status.PASS, "Click on Progress Notes");
@@ -91,7 +93,7 @@ public class ProgressNotes extends SeleniumSuite {
 		return flag; 	
 	}
 
-	 	//@Test(description="Verify Strike Off Notes Module",dependsOnMethods="verifyAddNotesModule")
+	 	@Test(description="Verify Strike Off Notes Module",dependsOnMethods="verifyAddNotesModule")
 	 	public boolean verifyStrikeOffNotesModule(){
 	 		try	{ 
 
@@ -122,7 +124,7 @@ public class ProgressNotes extends SeleniumSuite {
 		return flag;
 	 	}
 	 	
-	 	//@Test(description="Restore Strike Off Notes",dependsOnMethods="verifyStrikeOffNotesModule")
+	 	@Test(description="Restore Strike Off Notes",dependsOnMethods="verifyStrikeOffNotesModule")
 	 	public boolean verifyRestoreStrikeOff(){
 	 		
 	 		try	{ 
@@ -154,10 +156,12 @@ public class ProgressNotes extends SeleniumSuite {
 		return flag;
 	 	}
 	 	
-	 	//@Test(description="Search Progress Notes",dependsOnMethods="verifyStrikeOffNotesModule")
-//	 	@Test(description="Search Progress Notes")
+	 	@Test(description="Search Progress Notes",dependsOnMethods="verifyStrikeOffNotesModule")
+	 	
 	 	public boolean verifySearchProgressNotes(){
-		try	{ 		
+		try	{ 	
+			
+				Thread.sleep(5000);
 	 			stepInfo="Click on Patient tab";
 	 			flag=CommonMethods.switchToDefaultContent();
 	 			flag=CommonMethods.clickIfEnable(INotes.SLC_RecentPatient);
@@ -171,18 +175,18 @@ public class ProgressNotes extends SeleniumSuite {
 				flag=CommonMethods.clickIfEnable(INotes.SLC_ProgressNoteFilter);
 				flag=CommonMethods.selectFromList(INotes.SLC_ProgressNoteFilter, "DOS");
 				
-				flag=CommonMethods.sendText(INotes.TXT_ProgressNotesFilterInput, "08/01/2017");
+				flag=CommonMethods.sendText(INotes.TXT_ProgressNotesFilterInput, "10/09/2017");
 				flag=CommonMethods.clickIfEnable(INotes.BTN_ProgressNotesFilterSearch);
 				Thread.sleep(3000);
-				Assert.assertEquals(driver.findElement(INotes.LBL_DOSOfFirstFilterSearchResult).getText(), "8/1/2017");
+				Assert.assertEquals(driver.findElement(INotes.LBL_DOSOfFirstFilterSearchResult).getText(), "10/09/2017");
 				
 				flag=CommonMethods.clickIfEnable(INotes.SLC_ProgressNoteFilter);
 				flag=CommonMethods.selectFromList(INotes.SLC_ProgressNoteFilter, "Created On");
 				
-				flag=CommonMethods.sendText(INotes.TXT_ProgressNotesFilterInput, "9/1/2017");
+				flag=CommonMethods.sendText(INotes.TXT_ProgressNotesFilterInput, "10/09/2017");
 				flag=CommonMethods.clickIfEnable(INotes.BTN_ProgressNotesFilterSearch);
 				Thread.sleep(3000);
-				Assert.assertTrue(driver.findElement(INotes.LBL_CreatedOnOfFirstFilterSearchResult).getText().contains("9/1/2017"));
+				Assert.assertTrue(driver.findElement(INotes.LBL_CreatedOnOfFirstFilterSearchResult).getText().contains("10/09/2017"));
 				
 				flag=CommonMethods.clickIfEnable(INotes.SLC_ProgressNoteFilter);
 				flag=CommonMethods.selectFromList(INotes.SLC_ProgressNoteFilter, "Created By");
@@ -202,7 +206,7 @@ public class ProgressNotes extends SeleniumSuite {
 		return flag;	
 	 	} 	
 	 	
-		@Test  //(description="Verify Add Notes Module",dependsOnMethods="verifySearchProgressNotes")
+		@Test  (description="Verify Add Notes Module",dependsOnMethods="verifySearchProgressNotes")
 	 	public boolean verifyAddScannedDocument(){
 		
 	 		try	{ 
@@ -253,5 +257,4 @@ public class ProgressNotes extends SeleniumSuite {
 	 		}
 		return flag; 	
 	}
-	}		 	
-	
+	}

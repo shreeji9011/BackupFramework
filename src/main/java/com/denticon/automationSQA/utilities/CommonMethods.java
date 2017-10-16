@@ -86,8 +86,29 @@ public class CommonMethods{
 			return lstcommon;  
 	}  
 	
+	public static boolean clickIfEnable(By link, int time){  
+		boolean flag=false;  
+		WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),time);
+		wait.until(ExpectedConditions.elementToBeClickable(link));
+		WebElement element=DriverManager.getDriver().findElement(link);  
+		if(element.isEnabled()){  
+			element.click();  
+			flag=true;	  
+		}  
+		return flag;  
+	}  
 	
 	public static boolean clickIfEnable(By link){  
+	return clickIfEnable(link,15);
+	}  
+	 
+	public static void waitUntilLoading(By by) {
+		WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),60);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+	}
+	
+	
+/*	public static boolean clickIfEnable(By link){  
 		boolean flag=false;  
 		WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(),15);
 		wait.until(ExpectedConditions.elementToBeClickable(link));
@@ -97,7 +118,7 @@ public class CommonMethods{
 			flag=true;	  
 		}  
 		return flag;  
-	}  
+	}     */
 	 
 	
 	public static boolean mourseHoverIfEnable(By link){  
@@ -310,5 +331,20 @@ public class CommonMethods{
 		 	        foundAlert = false;
 		 	    }
 		 	    return foundAlert;
-			}   	 
+			}  
+	
+			public static boolean rightClickIfEnable(By element) {
+				boolean flag=false;  
+				try{
+					WebDriverWait wait = new WebDriverWait(com.denticon.automationSQA.DriverManager.getDriver(),15);
+					Actions action = new Actions(com.denticon.automationSQA.DriverManager.getDriver());
+					action.contextClick(com.denticon.automationSQA.DriverManager.getDriver().findElement(element)).build().perform();
+					return true;
+				}catch(Exception e){
+					return flag;  
+				}
+				
+			}
+			
 		 }
+

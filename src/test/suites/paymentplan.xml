@@ -4,13 +4,12 @@
  
  		<parameter name="browserType" value="chrome" />  
  		<parameter name="url"  
- 			value="http://dev.denticon.com/aspx/home/login.aspx" />
+ 			value="https://staging.denticon.com/aspx/home/login.aspx" />
+ 			
   <test name="Login" preserve-order="true"> 			  
  		<classes>  
- 	
- 		<class name="com.denticon.automationSQA.patient.RegularPaymentPlan" />
- 		 <class name="com.denticon.automationSQA.patient.OrthoPaymentPlan" />
- 		 
+ 		<class name="com.denticon.automationSQA.patient.RegularPaymentPlan" /> 
+ 		<class name="com.denticon.automationSQA.patient.OrthoPaymentPlan" /> 
  		</classes>  
  		
  	</test>  	</suite>

@@ -78,12 +78,12 @@ public class EmailTextMessage extends SeleniumSuite {
 return flag;
 	}
 
- 	@Test
+ //	@Test
 	public boolean verifyPatientPortalInformation() {
  		
 		try{ 
 			
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			stepInfo="Go to Search Patient Tab";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
 			test.log(Status.PASS, "Go to Patient Tab"); 

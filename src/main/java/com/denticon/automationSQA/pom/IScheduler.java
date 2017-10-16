@@ -5,12 +5,14 @@ import org.openqa.selenium.By;
 public interface IScheduler {
 
 	By TAB_SCHEDULER=By.id("MenuBar_aMenuScheduler"); 
+	By TITLE_Scheduler = By.xpath("//title");
  	By TAB_SCHEDULER_DD=By.id("aMenuScheduler"); 
  	By ICON_CALENDER=By.id("ApptMenu_imgDate"); 
  	By LST_DATES=By.id("calCell"); 
  	//By SLC_TIME_APPOINTMENT=By.xpath("//*[@id='ancSched']/div[3]"); 
- 	By SLC_TIME_APPOINTMENT=By.xpath("//div[@class='c']"); 
- 	 
+ 	By SLC_TIME_APPOINTMENT=By.xpath("//div[@class='c'][1]"); 
+ 	//By SLC_TIME_APPOINTMENT=By.xpath("div#r2"); 
+ 	By SLC_OFFTIME_APPOINTMENT = By.xpath("//div[contains(@title,'02:00 AM')]");
  	By TAB_BOOKEDAPP=By.xpath(".//*[@id='ancSched']/div[19]/table/tbody/tr[2]/td[2]"); 
  	By BTN_ADD_NEW_APPOINTMENT=By.cssSelector("#divAdd New Appointment..."); 
  	By BTN_ADD=By.id("cmdAdd"); 

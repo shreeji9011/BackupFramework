@@ -31,8 +31,8 @@ public class OrthoPaymentPlan extends SeleniumSuite{
 	@Test(description = "Verify Delete Payment Plan", dependsOnMethods = { "verifyOrthoPaymentPlanModule" })
 	public void verifyDeletePaymentPlan(){
 		
-		SearchPatient sp = new SearchPatient();
-		sp.SearchPatientByFirstNamePage("Terence"); 
+//		SearchPatient sp = new SearchPatient();
+//		sp.SearchPatientByFirstNamePage("Terence"); 
 		
 		stepInfo="Select Ortho Payment Plan";
 		flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
@@ -51,8 +51,8 @@ public class OrthoPaymentPlan extends SeleniumSuite{
 		
 		try{ 
 			
-			SearchPatient sp = new SearchPatient();
-			sp.SearchPatientByFirstNamePage("Terence");
+//			SearchPatient sp = new SearchPatient();
+//			sp.SearchPatientByFirstNamePage("Terence");
 			
 			stepInfo="Select Regular Payment Plan";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
@@ -64,7 +64,7 @@ public class OrthoPaymentPlan extends SeleniumSuite{
 
  			
  			stepInfo="Enter Treatment End Date Date";
- 			flag=CommonMethods.sendText(IPaymentPlan.TXT_TreatmentEndDate,"09102017");
+ 			flag=CommonMethods.sendText(IPaymentPlan.TXT_TreatmentEndDate,"12302017");
  			
  			stepInfo="Check Start Patient Payment Plan checkbox";
  			flag=CommonMethods.clickIfEnable(IPaymentPlan.CHK_StartPatientPaymentPlan);

@@ -15,7 +15,7 @@ import com.denticon.automationSQA.utilities.CommonMethods;
 
 
 public class TreatmentPlan extends SeleniumSuite{
-		String stepInfo=""; 
+	String stepInfo=""; 
 		boolean flag=false; 
 	 	String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\TreatmentPlan.properties"; 
 	 	Properties prop= new Properties();
@@ -24,7 +24,9 @@ public class TreatmentPlan extends SeleniumSuite{
 		public boolean verifyAddTreatmentPlanUsingCode() {
 	 		
 			try{ 
-				
+				TransactionEntry te= new TransactionEntry();
+		 		te.SearchPatientByPatientID("916");
+
 				stepInfo="Click on Transactions tab";
 	 			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
 	 			
@@ -35,6 +37,11 @@ public class TreatmentPlan extends SeleniumSuite{
 	 			
 	 			stepInfo="Enter Code"; 
 	 			flag=CommonMethods.sendText(ITransaction.TXT_ProcedureCode,"D0120");
+	 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_TE_ProcedureFromProcedureTable2);
+	 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+	 			if(CommonMethods.isElementPresent(ITransaction.BTN_TE_DiagnosticsPopup)) {
+	 				flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+	 			}
 	 			Thread.sleep(4000);
 	 			String codeFromAddedRowInTreatmentTable = returnDataFromTreamtmentTable("Code",noOfRowsInTreatmentTableBefore+1);
 	 			Assert.assertTrue(codeFromAddedRowInTreatmentTable.equals("D0120"));
@@ -53,6 +60,10 @@ public class TreatmentPlan extends SeleniumSuite{
 	 			stepInfo="Post To Ledger"; 
 	 			checkLastTreatmentRow(noOfRowsInTreatmentTableBefore+1);
 	 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_PostToLedger);
+	 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+	 			if(CommonMethods.isElementPresent(ITransaction.BTN_TE_DiagnosticsPopup)) {
+	 				flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+	 			}
 	 			
 	 			Assert.assertTrue(DriverManager.getDriver().findElement(ITransaction.TITLE_tranactionEntryPage).isDisplayed());
 	 			
@@ -69,11 +80,13 @@ public class TreatmentPlan extends SeleniumSuite{
 		 	}
 		
 	 	
-	@Test(description="Verify Patient tab functionality")			/* PASS */
+	@Test(description="Verify Patient tab functionality")
 	public boolean verifyAddTreatmentPlanUsingToothNumber() {
  		
 		try{ 
-			
+			TransactionEntry te= new TransactionEntry();
+	 		te.SearchPatientByPatientID("916");
+
 			stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -114,7 +127,9 @@ public class TreatmentPlan extends SeleniumSuite{
 	public boolean verifyAddTreatmentPlanUsingQuadrant() {
  		
 		try{ 
-			
+			TransactionEntry te= new TransactionEntry();
+	 		te.SearchPatientByPatientID("916");
+
 			stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -135,6 +150,7 @@ public class TreatmentPlan extends SeleniumSuite{
  			 							
  			stepInfo = "Save Tooth/Surface/Quadrant";
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_saveToothNumber);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
  			flag=CommonMethods.switchToDefaultContent();
  			Thread.sleep(4000);
  			int noOfRowsInTreatmentTableAfter= noOfTreatments();
@@ -151,7 +167,9 @@ public class TreatmentPlan extends SeleniumSuite{
 	public boolean verifyAddTreatmentPlanUsingSurfaces() {
  		
 		try{ 
-			
+			TransactionEntry te= new TransactionEntry();
+	 		te.SearchPatientByPatientID("916");
+
 			stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -164,11 +182,11 @@ public class TreatmentPlan extends SeleniumSuite{
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_restorative);
  			
  			stepInfo="Double Click on procedure code row AmalgamOneSurface procedure from Restorative Section";
- 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_AmalgamOneSurfacePrimary);
+ 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_AmalgamOneSurfacePrimary1);
  			 			
  			stepInfo = "Select Tooth Number";
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_selectToothNumber);
- 			flag=CommonMethods.clickIfEnable(ITransaction.LNK_selectToothA);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.LNK_selectTooth7);
  			 	
  			stepInfo = "Select Surface Number";
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_selectSurfact);
@@ -188,13 +206,13 @@ public class TreatmentPlan extends SeleniumSuite{
 		return flag;
 	 	}
 	
-	
-	
 	@Test(description="Verify Patient tab functionality")
 	public boolean verifyAddTreatmentPlanUsingUserCode() {
  		
 		try{ 
-			
+			TransactionEntry te= new TransactionEntry();
+	 		te.SearchPatientByPatientID("916");
+
 			stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -205,6 +223,11 @@ public class TreatmentPlan extends SeleniumSuite{
  			
  			stepInfo="Enter Code"; 
  			flag=CommonMethods.sendText(ITransaction.TXT_UserCode,"Exam");
+ 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_TE_ProcedureFromProcedureTable2);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+ 			if(CommonMethods.isElementPresent(ITransaction.BTN_TE_DiagnosticsPopup)) {
+ 				flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+ 			}
  			Thread.sleep(4000);
  			int noOfRowsInTreatmentTableAfter= noOfTreatments();
  			Assert.assertTrue(noOfRowsInTreatmentTableAfter == ( noOfRowsInTreatmentTableBefore +1));
@@ -219,13 +242,13 @@ public class TreatmentPlan extends SeleniumSuite{
 	 		
 		return flag;
 	 	}
-	
-	
 	@Test(description="Verify Patient tab functionality")
 	public boolean verifyAddTreatmentPlanFromCategories() {
  		
 		try{ 
-			
+			TransactionEntry te= new TransactionEntry();
+	 		te.SearchPatientByPatientID("916");
+
 			stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -239,8 +262,11 @@ public class TreatmentPlan extends SeleniumSuite{
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_diagnostic);
  			
  			stepInfo="Double Click on procedure code row for first diagnostic service from the list";
- 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_ProcedureFromProcedureTable);
- 			 			 		 							
+ 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_PeriodicOralEvaluationProcedure);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+ 			if(CommonMethods.isElementPresent(ITransaction.BTN_TE_DiagnosticsPopup)) {
+ 				flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);	
+ 			}
  			Thread.sleep(4000);
  			int noOfRowsInTreatmentTableAfter= noOfTreatments();
  			Assert.assertTrue(noOfRowsInTreatmentTableAfter == ( noOfRowsInTreatmentTableBefore +1));
@@ -306,6 +332,7 @@ public class TreatmentPlan extends SeleniumSuite{
  			
  			stepInfo="Double Click on procedure code row for first diagnostic service from the list";
  			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_ProcedureFromProcedureTable);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
  					
  			Thread.sleep(4000);
  			noOfRowsInTreatmentTableAfter= noOfTreatments();
@@ -338,6 +365,8 @@ public class TreatmentPlan extends SeleniumSuite{
  			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_ProcedureFromProcedureTable);
  					
  			Thread.sleep(4000);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+ 			Thread.sleep(4000);
  			noOfRowsInTreatmentTableAfter= noOfTreatments();
  			Assert.assertTrue(noOfRowsInTreatmentTableAfter == ( noOfRowsInTreatmentTableBefore +1)); 
  			
@@ -347,7 +376,7 @@ public class TreatmentPlan extends SeleniumSuite{
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_OralSurgery);
  			
  			stepInfo="Double Click on procedure code row for first diagnostic service from the list";
- 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_ProcedureFromProcedureTable);
+ 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_TE_CoronalRemanantsProcedure1);
  					
  			stepInfo = "Select Tooth Number";
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_selectToothNumber);
@@ -368,7 +397,14 @@ public class TreatmentPlan extends SeleniumSuite{
  			
  			stepInfo="Double Click on procedure code row for first diagnostic service from the list";
  			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_ProcedureFromProcedureTable);
- 					
+ 			
+ 			stepInfo = "Select Tooth Number";
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_selectToothNumber);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.LNK_selectToothA);
+ 			
+ 			stepInfo = "Save Tooth/Surface/Quadrant";
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_saveToothNumber);
+ 			
  			Thread.sleep(4000);
  			noOfRowsInTreatmentTableAfter= noOfTreatments();
  			Assert.assertTrue(noOfRowsInTreatmentTableAfter == ( noOfRowsInTreatmentTableBefore +1)); 
@@ -380,6 +416,9 @@ public class TreatmentPlan extends SeleniumSuite{
  			
  			stepInfo="Double Click on procedure code row for first diagnostic service from the list";
  			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_ProcedureFromProcedureTable);
+ 		if(CommonMethods.isElementPresent(ITransaction.BTN_TE_DiagnosticsPopup)) {
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+ 		}
  					
  			Thread.sleep(4000);
  			noOfRowsInTreatmentTableAfter= noOfTreatments();
@@ -395,12 +434,13 @@ public class TreatmentPlan extends SeleniumSuite{
 		return flag;
 	 	}
 	
-	
-	@Test(description="change Added Treatment Plan Details")
-	public boolean changeAddedTreatmentPlanDetails() {
+	@Test(description="Verify Patient tab functionality")
+	public boolean verifyChangeAddedTreatmentPlanDetails() {
  		
 		try{ 
-			
+			TransactionEntry te= new TransactionEntry();
+	 		te.SearchPatientByPatientID("916");
+
 			stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -411,6 +451,12 @@ public class TreatmentPlan extends SeleniumSuite{
  			
  			stepInfo="Enter Code"; 
  			flag=CommonMethods.sendText(ITransaction.TXT_ProcedureCode,"D0120");
+ 			flag=CommonMethods.doubleClickIfEnable(ITransaction.ROW_TE_ProcedureFromProcedureTable2);
+ 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+ 			if(CommonMethods.isElementPresent(ITransaction.BTN_TE_DiagnosticsPopup)) {
+ 				flag=CommonMethods.clickIfEnable(ITransaction.BTN_TE_DiagnosticsPopup);
+ 	 				
+ 			}
  			Thread.sleep(4000);
  			String codeFromAddedRowInTreatmentTable = returnDataFromTreamtmentTable("Code",noOfRowsInTreatmentTableBefore+1);
  			Assert.assertTrue(codeFromAddedRowInTreatmentTable.equals("D0120"));
@@ -418,12 +464,12 @@ public class TreatmentPlan extends SeleniumSuite{
  			checkLastTreatmentRow(noOfRowsInTreatmentTableBefore+1);
  			stepInfo="change Tx Councelor"; 
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_changeCouncelorOption);
- 			flag=CommonMethods.selectFromList(ITransaction.DRD_changeCouncelorDropDown,"Ananta Ghoush");
+ 			flag=CommonMethods.selectFromList(ITransaction.DRD_changeCouncelorDropDown,"Amy Chun");
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_changeCouncelor);
  			flag=CommonMethods.isAlertPresent();
  			Thread.sleep(4000);
  			String DataFromCouncelorInTreatmentTable = returnDataFromTreamtmentTable("Councelor",noOfRowsInTreatmentTableBefore+1);
- 			Assert.assertTrue(DataFromCouncelorInTreatmentTable.equals("PLTEST77H"));
+ 			Assert.assertTrue(DataFromCouncelorInTreatmentTable.equals("AMYCHUN1"));
  			
  			checkLastTreatmentRow(noOfRowsInTreatmentTableBefore+1);
  			stepInfo="change Provider"; 
@@ -433,7 +479,7 @@ public class TreatmentPlan extends SeleniumSuite{
  			flag=CommonMethods.isAlertPresent();
  			Thread.sleep(4000);
  			String ProviderInTreatmentTable = returnDataFromTreamtmentTable("Provider",noOfRowsInTreatmentTableBefore+1);
- 			Assert.assertTrue(ProviderInTreatmentTable.equals("01MS"));
+ 			Assert.assertTrue(ProviderInTreatmentTable.equals("2526"));
  			
  			
  			
@@ -465,20 +511,28 @@ public class TreatmentPlan extends SeleniumSuite{
  			
  			//flag=CommonMethods.clickIfEnable(ITransaction.RDO_changeStatusHold);
  			//flag=CommonMethods.clickIfEnable(ITransaction.BTN_changeStatus);
+ 			flag=CommonMethods.selectFromList(ITransaction.DRPDWN_PlanFilter, "--Tx Plan Filter--");
+ 			noOfRowsInTreatmentTableBefore = noOfTreatments();
  			stepInfo="Show Plan"; 
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_showPlanOption);
  			flag=CommonMethods.sendText(ITransaction.TXT_showPlanId,"2");
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_showPlan);
+ 			
  			Thread.sleep(4000);
  			int noOfRowsInTreamtmentTableAfterFilter = noOfTreatments();
  			Assert.assertTrue(noOfRowsInTreatmentTableBefore+1 >= noOfRowsInTreamtmentTableAfterFilter);
  			
  			//Pre-AUth TEst cases gives error "one of the selected treatment has no billing order"
+ 			flag=CommonMethods.selectFromList(ITransaction.DRPDWN_PlanFilter, "--Tx Plan Filter--");
+ 			noOfRowsInTreamtmentTableAfterFilter = noOfTreatments();
+ 			if(noOfRowsInTreamtmentTableAfterFilter!=0) {
+ 				checkLastTreatmentRow(noOfRowsInTreatmentTableBefore+1);
+ 				stepInfo="Delete Treatment"; 
+ 	 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_deleteTreatment);
+ 	 			flag=CommonMethods.isAlertPresent();	 									
+ 	 			
+ 			}
  			
- 			checkLastTreatmentRow(noOfRowsInTreatmentTableBefore+1);
- 			stepInfo="Delete Treatment"; 
- 			flag=CommonMethods.clickIfEnable(ITransaction.BTN_deleteTreatment);
- 			flag=CommonMethods.isAlertPresent();	 									
  			 
  		} catch (Exception e) { 
  			e.printStackTrace(); 
@@ -489,8 +543,6 @@ public class TreatmentPlan extends SeleniumSuite{
 	 		
 		return flag;
 	 	}
-	
-	
 	public static int noOfTreatments(){
 		
 		int noOfRows = DriverManager.getDriver().findElements(ITransaction.ROWS_preexistingTreatment).size();
@@ -560,8 +612,9 @@ public class TreatmentPlan extends SeleniumSuite{
 	
 	public static void checkLastTreatmentRow(int rowNo){
 		try{
-			DriverManager.getDriver().findElement(By.xpath("//table[@id='dgTPlanctl0']//tbody/tr["+rowNo+"]/td[1]/span/input")).click();
-		}catch(Exception e){
+			//CommonMethods.clickIfEnable(By.xpath("//table[@id='dgTPlanctl0']//tbody/tr[\"+rowNo+\"]/td[1]/span/input"));
+			CommonMethods.clickIfEnable(By.xpath("//table[@id='dgTPlanctl0']//tbody/tr["+rowNo+"]/td[1]/span/input"));
+			}catch(Exception e){
 			e.printStackTrace();
 			Assert.fail();
 		}

@@ -27,10 +27,10 @@ public class RegularPaymentPlan extends SeleniumSuite{
 	}	
 	
 	@Test(description = "Verify Delete Payment Plan", dependsOnMethods = { "verifyRegularPaymentPlanModule" })
-	public void verifyDeletePaymentPlan(){
+	public void verifyDeleteRegularPaymentPlan(){
 		
-		SearchPatient sp = new SearchPatient();
-		sp.SearchPatientByFirstNamePage("Terence");
+//		SearchPatient sp = new SearchPatient();
+//		sp.SearchPatientByFirstNamePage("Terence");
 		
 			stepInfo="Select Regular Payment Plan";
 			flag=CommonMethods.clickIfEnable(IAddPatient.TAB_PATIENT);
@@ -49,8 +49,8 @@ public class RegularPaymentPlan extends SeleniumSuite{
 		
 		try{ 
 			
-			SearchPatient sp = new SearchPatient();
-			sp.SearchPatientByFirstNamePage("Terence");
+//			SearchPatient sp = new SearchPatient();
+//			sp.SearchPatientByFirstNamePage("Terence");
 			
 			Thread.sleep(5000);
 			stepInfo="Select Regular Payment Plan";

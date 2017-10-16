@@ -171,9 +171,9 @@ public static ExtentTest test;
 	public void afterSuite(){
  		logout();
 		extent.flush(); 
-		if(driver.switchTo().alert() != null ){
+/*		if(driver.switchTo().alert() != null ){
 			driver.switchTo().alert().accept();
-		}
+		}					*/
 		driver.close();
 		driver.quit();
 	}						
