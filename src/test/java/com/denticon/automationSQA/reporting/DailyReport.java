@@ -217,12 +217,13 @@ public boolean DailyJournalSummary(){
 		 			stepInfo="Click on Print Preview Icon ";
 		 			flag=CommonMethods.clickIfEnable(IReport.BTN_PRINT_PREVIEW);
 		 			
-		 			
+		 	
 		 			String parentWindow=DriverManager.getDriver().getWindowHandle();
 		 			Set<String> windowHandles = DriverManager.getDriver().getWindowHandles();
 		 			for (String window : windowHandles) {
-		 				DriverManager.getDriver().switchTo().window(window);
-		 			}
+		 			if(!window.equals(parentWindow)){
+		 			DriverManager.getDriver().switchTo().window(window);
+		 			
 		 			
 		 			stepInfo="Verify Execution Summary report with Title";
 		 			 			Thread.sleep(5000);
@@ -230,7 +231,9 @@ public boolean DailyJournalSummary(){
 		 			 			
 		 			 			DriverManager.getDriver().close();
 		 			 		 			DriverManager.getDriver().switchTo().window(parentWindow);
-	} catch (Exception e) { 
+	}
+		 			}
+	}catch (Exception e) { 
 			e.printStackTrace(); 
 			Assert.fail(); 
 			
@@ -359,7 +362,7 @@ return flag;
 	
 }
 
-@Test
+//@Test
 public boolean DailyJournalLandscape(){ 
 	try {
 					stepInfo="Click on Reporting tab";
@@ -409,7 +412,7 @@ public boolean DailyJournalLandscape(){
 		 			 			flag=CommonMethods.isElementPresent(IReport.PDF_DailyJournalLandscape);
 		 			 			
 		 			 			DriverManager.getDriver().close();
-		 			 		 			DriverManager.getDriver().switchTo().window(parentWindow);
+	 			 		 			DriverManager.getDriver().switchTo().window(parentWindow);
 	} catch (Exception e) { 
 			e.printStackTrace(); 
 			Assert.fail(); 
@@ -735,11 +738,13 @@ public boolean AppointmentConfirmationCallList(){
 		 			stepInfo="Click on Print Preview Icon ";
 		 			flag=CommonMethods.clickIfEnable(IReport.BTN_PRINT_PREVIEW);
 		 			
-		 			
 		 			String parentWindow=DriverManager.getDriver().getWindowHandle();
 		 			Set<String> windowHandles = DriverManager.getDriver().getWindowHandles();
 		 			for (String window : windowHandles) {
-		 				DriverManager.getDriver().switchTo().window(window);
+		 			if(!window.equals(parentWindow)){
+		 			DriverManager.getDriver().switchTo().window(window);
+
+		 			}
 		 			}
 		 			
 		 			stepInfo="Verify Execution Summary report with Title";

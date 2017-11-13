@@ -808,7 +808,199 @@ public interface IReport {
 	  By Lnk_VFDReport = By.xpath("//*[@id='menuOfficeRpts']/a[21]");
 	  
 	  
+	  ///////////////////////////////////////////// Letters //////////////////////////////////////////////////////////////////////////
+	  
+	  By LNK_LETTERS = By.xpath("//*[@id='menuReports']/a[13]");
+	  
+	  By Lnk_MarketingLetters = By.id("rbMark");
+	  
+	  By Lnk_FinancialCommuniques = By.id("rbFin");
+	  
+	  By Lnk_DentistCommuniques = By.id("rbDocCom");
+	  
+	  By Lnk_AppointmentLetters = By.id("rbAppt");
+	  
+	  By Lnk_InsuranceLetters = By.id("rbIns");
+	  
+	  By Lnk_PatientConsent = By.id("rbPatConsent");
+	  
+	  By Lnk_PatientEducationLetters = By.id("rbPatEdu");
 	  
 	  
+	  //////////////////////////////// Batch Collection Letters ////////////////////////////////////////
+	  
+	  By LNK_BATCHCOLLECTIONLETTERS = By.xpath("//*[@id='menuReports']/a[14]");
+	  
+	  By Lnk_sendToTransworld = By.xpath("//*[@id='btnTransworld']");
+	  
+	  
+	  
+	  ///////////////////////////////// PostCards ////////////////////////////////////////////////////////
+	  
+	  By LNK_POSTCARDS = By.xpath("//*[@id='menuReports']/a[15]");
+	  
+	  By Lnk_RecallPostcards = By.id("rbRecall");
+	  
+	  By Lnk_AppointmentPostcards = By.id("rbAppt");
+	  
+	  By Lnk_BirthdayPostcards = By.id("rbBirth");
+	  
+	  By Lnk_MiscellaneousPostcards = By.id("rbMisc");
+	  
+	  
+	  /////////////////////////////// Labels ///////////////////////////////////////////////////
+	  
+	  
+	  By LNK_LABELS = By.xpath("//*[@id='menuReports']/a[16]");
+	  
+	  By Lnk_PatientsLabels  = By.id("rbPat");
+	  
+	  By Lnk_ResponsiblePartyLabels = By.id("rbRP");
+	  
+	  By Lnk_ReferralLabels = By.id("rbRef");
+	  
+	  By Lnk_ProviderLabels = By.id("rbPrdr");
+	  
+	  By Lnk_ChartLabels = By.id("rbChartLbls");
+	  
+	  By Lnk_PatientsLabelsbyInsurancePlan = By.id("rbLblPatbyInsPlan");
+	  
+	  By Lnk_Employerlabels = By.id("rbEmp");
+	  
+	  By Lnk_InsuranceCarrierlabels = By.id("rbIns");
+	  
+	  By Lnk_RecallLabels = By.id("rbRecall");
+	  
+	  By Lnk_EZPayLabels = By.id("rbRPEZPay");
+	  
+	  By Lnk_BirthdayLabels = By.id("rbBirthdayLbls");
+	  
+	  
+	  ////////////////////////// Custom Latters /////////////////////////////////////// 
+	  
+	  By LNK_CUSTOM = By.xpath("//*[@id='menuReports']/a[17]/span[1]");
+	  
+	  By Lnk_CustomLetters  = By.xpath("//*[@id='menuCustom']/a[1]"); 
+	  
+	  By Lnk_CustomPostcards = By.xpath("//*[@id='menuCustom']/a[2]");
+	  
+	  
+	  ///////////////////////////////////////////////////// My Reports ////////////////////////////////////////////
+	  
+	  By LNK_MYREPORTS = By.xpath("//*[@id='menuReports']/a[18]");
+	  
+	  By Lnk_DailyJournalbyUserDetailR  = By.id("rbDlyJourUserD"); 
+	  
+	  By Lnk_DailyJournalbyUsercreateddateDetail = By.id("rbDlyJourUserDCreated");
+	  
+	  By Lnk_DailyJournalByProviderDetailR = By.id("rbDlyJourPrdrD"); 
+	  
+	  By Lnk_AppointmentDetailbyUser = By.id("rbGrpApptDetail");
+	  
+	  By Lnk_TimeClockReportR = By.id("rbTimeclockRpt");
+	  
+	  By Lnk_ProductionByCodes = By.id("rbProdCodes");
+	  
+	  By Lnk_ProductionByProvider = By.id("rbProdPrdr");
+	  
+	  By Lnk_ProductionByCategory = By.id("rbProdCate");
+	  
+	  By Lnk_MissingProgressNotesR = By.id("rbMissProgNotes");
+	  
+	  ////////////////////////////////// Excel Report ////////////////////////////////////////////////////////////////////
+	  
+	  By LNK_EXCELREPORTS = By.xpath("//*[@id='menuReports']/a[19]");
+	  
+	  By Lnk_AgingDetailE  = By.id("rbMagAgeDetail");
+	  
+	  By Lnk_AgingbyHomeOffice = By.id("rbARHomeOffice");
+	  
+	  By Lnk_AgingbyHomeOfficewithBalanceStatusE = By.id("rbARHomeOfficeBalStat");
+	  
+	  By Lnk_OutstandingClaimsE = By.id("rbClaimsAge");
+	  
+	  By Lnk_DailyJournalDetail = By.id("rbDlyJourD");
+	  
+	  By Lnk_DailyCollectionbyCarrierE = By.id("rbDlyCollCarr");
+	  
+	  By Lnk_BenefitsUsedUnusedReportTreatmentPlan = By.id("rbBenUsedTxPlan");
+	  
+	  By Lnk_BenefitsUsedUnusedReportRecall = By.id("rbBenUsedRecall");
+	  
+	  By Lnk_VBSEligibilityReportE = By.id("rbVBSEligRpt");
+	  
+	
+	  ////////////////////////////////////////////// Bank insurance forms ///////////////////////////////////////////////////////////
+	  
+	  By LNK_BANKINSRFORMS = By.xpath("//*[@id='menuReports']/a[20]");
+	  
+	  By Lnk_ADADentalClaimForm2012 = By.id("rbADA2012");
+	  
+	  By Lnk_HealthInsuranceClaimFormHCFA0212 = By.id("rbHCFA0212");
+	  
+	  By Lnk_DentiCal = By.id("rbDentical");
+	  By Chk_patient = By.xpath("//*[@id='chkPatInfo']");
+	  By txt_serch = By.xpath("//*[@id='txtPat']");
+	  By tab_Search = By.xpath("//*[@id='btnSearchPat']");
+	  By Slc_PID = By.xpath("//*[@id='dtOptions']/tbody/tr[2]/td[1]/span");
+	  By tab_select = By.xpath("//*[@id='btnSelect']");
+	  
+	  
+	  /////////////////////////////////////// Pat Reg./Medical Info Forms  ///////////////////////////////////////////
+	  
+	  By LNK_PATREG_MEDICALINFO = By.xpath("//*[@id='menuReports']/a[21]");
+	  
+	  By Lnk_BlankPatientRegistrationForm = By.id("rbPR");
+	  
+	  By Lnk_MedicalQuestionnaire = By.id("rbMedQ");
+	  
+	  By Lnk_DentalQuestionnaire = By.id("rbDenQ");
+	  
+	  
+	  /////////////////////////////////////////////// Print ICON ////////////////////////////////////////////////////////
+	  
+	 
+	  By LNK_PRINTMENUICON = By.xpath("//*[@id='MenuBar_aMenuPrint']/img");
+	  By IPrintPreview = By.id("btnWOReport");
+	  By Lnk_WALKOUTREPORT = By.xpath("//*[@id='MenuBar_menuPrint']/a[1]");
+	  
+	  By Lnk_SUPERBILL = By.xpath("//*[@id='MenuBar_menuPrint']/a[2]");
+	  By Lnk_SPrint = By.xpath("//*[@id='btnSBReport']");
+	  
+	  By Lnk_PATLEDGER = By.xpath("//*[@id='MenuBar_menuPrint']/a[3]");
+	  By Lnk_PLPrint = By.id("btnPLReport");
+	  
+	  By Lnk_ACCLEDGER = By.xpath("//*[@id='MenuBar_menuPrint']/a[4]");
+	  By Lnk_ALPrint = By.id("btnALReport");
+	  
+	  By Lnk_STATEMENTS = By.xpath("//*[@id='MenuBar_menuPrint']/a[5]");
+	  By Lnk_STPrint = By.id("btnStmtReport");
+	  
+	  By Lnk_ROUTINGSLIP = By.xpath("//*[@id='MenuBar_menuPrint']/a[6]");
+	  By Lnk_RSPrint = By.id("btnRoutSlip");
+	  
+	  By Lnk_TREATMENTPLAN = By.xpath("//*[@id='MenuBar_menuPrint']/a[7]");
+	  By Lnk_TXPrint = By.id("btnTxPlanReport");
+	  
+	  By Lnk_PERIOCHART = By.xpath("//*[@id='MenuBar_menuPrint']/a[8]");
+	  By Lnk_PCPrint = By.id("btnPerioReport");
+	  
+	  By Lnk_MEDICALHISTORY = By.xpath("//*[@id='MenuBar_menuPrint']/a[9]");
+	  By Lnk_MHPrint = By.id("btnMedHistoryReport");
+	  
+	  By Lnk_COLLASSIGNMENT = By.xpath("//*[@id='MenuBar_menuPrint']/a[10]");
+
+	  
+	  By Lnk_LETTERS = By.xpath("//*[@id='MenuBar_menuPrint']/a[11]");
+	  By Lnk_LPrint = By.id("btnLetReport");
+	  
+	  By Lnk_LABELS = By.xpath("//*[@id='MenuBar_menuPrint']/a[12]");
+//	  By Lnk_ALPrint = By.id("btnALReport");
+	  
+	  By Lnk_AUDITTRAIL = By.xpath("//*[@id='MenuBar_menuPrint']/a[13]");
+	  By Lnk_ATPrint = By.id("btnSBReport");
+	  
+	  By Lnk_CLINICALHISTORY = By.xpath("//*[@id='MenuBar_menuPrint']/a[14]");
+	  By Lnk_CHPrint = By.id("btnClinHistReport");
 	  
 }

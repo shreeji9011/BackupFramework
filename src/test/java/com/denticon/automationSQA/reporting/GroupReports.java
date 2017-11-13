@@ -20,7 +20,7 @@ public class GroupReports extends SeleniumSuite{
 			////////////////// Appointment Reports /////////////
 			
 			
-//@Test
+@Test
 	public boolean AppointmentReports(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -78,11 +78,11 @@ public class GroupReports extends SeleniumSuite{
  			flag=CommonMethods.clickIfEnable(IReport.Btn_ScheduledReort);
 
 			String parentWindow=DriverManager.getDriver().getWindowHandle();
-/*			Set<String> windowHandles = DriverManager.getDriver().getWindowHandles();
+			Set<String> windowHandles = DriverManager.getDriver().getWindowHandles();
 			for (String window : windowHandles) {
 				DriverManager.getDriver().switchTo().window(window);
-			}   */
-
+			}   
+			DriverManager.getDriver().close();
 			 		 			DriverManager.getDriver().switchTo().window(parentWindow);
 
 
@@ -118,7 +118,7 @@ public class GroupReports extends SeleniumSuite{
 			for (String window : windowHandles) {
 				DriverManager.getDriver().switchTo().window(window);
 			}
-
+			DriverManager.getDriver().close();
 			 		 			DriverManager.getDriver().switchTo().window(parentWindow);
 
 	} catch (Exception e) { 
@@ -132,7 +132,7 @@ return flag;
 	
 	////////////// Group Daily reports ///////////////////////////////////
 	
-//	@Test
+	@Test
 		public boolean DailyJournalbyUserDetail(){ 
 			try {
 				stepInfo="Click on Reporting tab";
@@ -170,7 +170,7 @@ return flag;
 	 	
 	}
 
-//	@Test
+	@Test
 	public boolean DailyJournalbyUserDetailCreatedDate (){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -208,7 +208,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean DailyJournalG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -247,7 +247,7 @@ return flag;
 }
 	
 	
-//	@Test
+	@Test
 	public boolean DailySummaryG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -285,7 +285,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean DailyJournalByProviderDetailG (){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -323,7 +323,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean DailyScheduledProductionG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -361,7 +361,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean SpecialTransactionReport(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -399,7 +399,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ExsummaryG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -437,7 +437,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean DailyCollection(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -475,7 +475,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean DailyCollectionbyProviderG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -513,7 +513,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean PatientProgressNotesG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -551,7 +551,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean UnsignedProgressNotesReportG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -589,7 +589,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean MissingProgressNotesG (){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -627,7 +627,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean DailyAuditReportG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -667,7 +667,7 @@ return flag;
 	
 	/////////////////////////////// Group report- Insurance report //////////////////////
 	
-//	@Test
+	@Test
 	public boolean OutstandingClaims(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -706,7 +706,7 @@ return flag;
 }
 	
 
-//	@Test
+	@Test
 	public boolean OutstandingClaimsExcel(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -744,7 +744,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ClaimsList(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -782,7 +782,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ClaimsNotCreated(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -820,7 +820,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ClaimsCreatedNotSent(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -858,7 +858,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean OutstandingPreAuthorizationG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -896,7 +896,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean PreAuthorizationListG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -934,7 +934,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean UnbilledReportDuetoNoInsurance(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -972,7 +972,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean CapitationUtilizationDetailG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1010,7 +1010,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean CapitationUtilizationSummaryG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1048,7 +1048,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean CapitationUtilizationProviderDetailG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1086,7 +1086,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean CapitationUtilizationProviderSummaryG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1124,7 +1124,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean PlansCreatedByUser(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1162,7 +1162,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean NewPatientsbyCarrierG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1200,7 +1200,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ProceduresonHoldG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1242,7 +1242,7 @@ return flag;
 	///////////////////////////// Group reports- Management report /////////////// 
 	
 	
-//	@Test
+	@Test
 	public boolean AgingDetailGR(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1280,7 +1280,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean AgingSummaryGR (){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1318,7 +1318,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean AgingByHomeOfficeG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1356,7 +1356,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean AgingSummaryByHomeOffice(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1394,7 +1394,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean AgingbyHomeOfficewithBalanceStatusG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1432,7 +1432,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean AgingwithRemContractBalG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1470,7 +1470,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean AgingwithRemContractBalbyHomeOfficeG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1508,7 +1508,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean AgingbyProviderbyHomeOfficeDetail (){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1546,7 +1546,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ProductionbyCategory(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1584,7 +1584,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ProductionbyCodes(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1622,7 +1622,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ProductionbyCodesProvider(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1660,7 +1660,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean ProductionbyProviderG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1698,7 +1698,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean RecallDue(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1736,7 +1736,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean AppointmentDetailByUser(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1774,7 +1774,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean TimeClockReport(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1813,7 +1813,7 @@ return flag;
 }
 
 	
-//	@Test
+	@Test
 	public boolean UnallocationPaymentsAdjustmentsReport(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1854,7 +1854,7 @@ return flag;
 	
 	//////////////////////////////////////////////////////// Group Reports - Other Reports ////////////////////////////////////////////////
 	
-//	@Test
+	@Test
 	public boolean NewPatientsList(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1892,7 +1892,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean TxPlanStatusReport(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1930,7 +1930,7 @@ return flag;
  	
 }	
 	
-//	@Test
+	@Test
 	public boolean UserActivityReport(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -1968,7 +1968,7 @@ return flag;
  	
 }	
 
-//	@Test
+	@Test
 	public boolean Tickler(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -2006,7 +2006,7 @@ return flag;
  	
 }
 	
-//	@Test
+	@Test
 	public boolean PatientMedicaidIDReport(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -2045,7 +2045,7 @@ return flag;
 }
 
 	
-//	@Test
+	@Test
 	public boolean AppointmentsbyProvider(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -2085,7 +2085,7 @@ return flag;
 	
 /////////////////////////////////////////////////////// Group Reports - Referral Reports ////////////////////////////////////////////////
 	
-//	@Test
+	@Test
 	public boolean ReferralProductionListG(){ 
 		try {
 			Thread.sleep(5000);
@@ -2124,7 +2124,7 @@ return flag;
  	
 }	
 	
-//	@Test
+	@Test
 	public boolean ReferralSummaryReportG(){ 
 		try {
 			Thread.sleep(5000);
@@ -2163,7 +2163,7 @@ return flag;
  	
 }		
 	
-//	@Test
+	@Test
 	public boolean ReferralCountSummaryG(){ 
 		try {
 			stepInfo="Click on Reporting tab";
@@ -2179,13 +2179,14 @@ return flag;
  			stepInfo="Click on Print Preview Icon ";
  			flag=CommonMethods.clickIfEnable(IReport.BTN_PRINT_PREVIEW);
  			
- 			
  			String parentWindow=DriverManager.getDriver().getWindowHandle();
  			Set<String> windowHandles = DriverManager.getDriver().getWindowHandles();
  			for (String window : windowHandles) {
- 				DriverManager.getDriver().switchTo().window(window);
+ 			if(!window.equals(parentWindow)){
+ 			DriverManager.getDriver().switchTo().window(window);
+
  			}
- 			
+ 			}
  			stepInfo="Verify Execution Summary report with Title";
  			 			Thread.sleep(5000);
  			 			flag=CommonMethods.isElementPresent(IReport.PDF_AgingDetail);

@@ -403,7 +403,10 @@ public boolean RoutingSlip(){
 			String parentWindow=DriverManager.getDriver().getWindowHandle();
 			Set<String> windowHandles = DriverManager.getDriver().getWindowHandles();
 			for (String window : windowHandles) {
-				DriverManager.getDriver().switchTo().window(window);
+			if(!window.equals(parentWindow)){
+			DriverManager.getDriver().switchTo().window(window);
+
+			}
 			}
 			
 			stepInfo="Verify Execution Summary report with Title";

@@ -22,7 +22,7 @@ public class SearchPatient extends SeleniumSuite {
 	String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\AddNewPatient.properties";
 	Properties prop = new Properties();
 
-//	@Test(description = "Verify Search Patient functionality")
+	@Test(description = "Verify Search Patient functionality")
 	public boolean verifySearchPatientPage() {
 		try {
 			Thread.sleep(1000);
@@ -59,7 +59,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 
 	/// Patient First Name/////
-//	@Test(description = "Verify Patient First Name")
+	@Test(description = "Verify Patient First Name")
 	public boolean verifyPatientFirstNamePage() {
 		try {
 			stepInfo = "Go to Search Patient Tab";
@@ -99,7 +99,7 @@ public class SearchPatient extends SeleniumSuite {
 
 	//// Patient Type//////
 
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientType() {
 		try {
 			stepInfo = "Go to Search Patient Tab";
@@ -136,7 +136,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 
 	///// Patient Medicaid ID /////
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientMedicaidID() {
 
 		try {
@@ -176,7 +176,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 
 	///// Patient Chart # //////////
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientChartNo() {
 
 		try {
@@ -214,7 +214,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 
 	//// Patient SSN //////
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientSSN() {
 
 		try {
@@ -253,7 +253,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 
 	///// Patient Email ///////
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientEmail() {
 
 		try {
@@ -291,7 +291,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 
 	/// Patient BirthDate ////
-	// @Test(description="Verify Patient tab functionality")
+ @Test(description="Verify Patient tab functionality")
 	public boolean verifyPatientBirthDate() {
 
 		try {
@@ -330,7 +330,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 	/// Patient Home/Cell/Work Phone /////////////
 
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientHomePhone() {
 
 		try {
@@ -370,7 +370,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 
 	////////////// Cell Phone //////////
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientCellPhone() {
 
 		try {
@@ -411,7 +411,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 	/////////// Work Phone //////////////
 
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientWorkPhone() {
 
 		try {
@@ -450,7 +450,7 @@ public class SearchPatient extends SeleniumSuite {
 	}
 
 	///// Patient ID //////
-//	@Test(description = "Verify Patient tab functionality")
+	@Test(description = "Verify Patient tab functionality")
 	public boolean verifyPatientID() {
 
 		try {
@@ -491,7 +491,7 @@ public class SearchPatient extends SeleniumSuite {
 
 	///// RP Type CASH //////
 
-	// @Test(description="Verify Patient tab functionality")
+ @Test(description="Verify Patient tab functionality")
 	public boolean verifyResponsiblePartyType() {
 
 		try {
@@ -817,7 +817,7 @@ public class SearchPatient extends SeleniumSuite {
 			if (!driver.getCurrentUrl().contains("EditRespParty")) {
 				stepInfo = "Select First Patient from Result";
 				flag = selectNthRowFromResponsiblePartyResults(ISearchPatient.TABLE_searchResults, 1);
-			}
+			}            
 			if(CommonMethods.isElementPresent(By.xpath("//div[contains(text(),'flash alert')]/following-sibling::div//img[@alt]"))) {
  				CommonMethods.clickIfEnable(By.xpath("//div[contains(text(),'flash alert')]/following-sibling::div//img[@alt]"));
  			}

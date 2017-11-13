@@ -19,7 +19,7 @@ public class OfficeReports extends SeleniumSuite{
 			
 /////////////////////////////////////////////////////// Office Reports - Access Dental Reports ////////////////////////////////////////////////
 	
-//@Test
+@Test
 public boolean ProductionAnalysisReport(){ 
 try {
 Thread.sleep(5000);
@@ -58,7 +58,7 @@ return flag;
 
 }	
 
-//@Test
+@Test
 public boolean ProviderCompensationReportNew(){ 
 try {
 Thread.sleep(5000);
@@ -97,7 +97,7 @@ return flag;
 
 }	
 
-//@Test
+@Test
 public boolean SalesandDiagnosisReport(){ 
 try {
 Thread.sleep(5000);
@@ -136,7 +136,7 @@ return flag;
 
 }	
 
-//@Test
+@Test
 public boolean CollectionRateReport(){ 
 try {
 Thread.sleep(5000);
@@ -175,7 +175,7 @@ return flag;
 
 }	
 
-//@Test
+@Test
 public boolean TreatmentPlanAcceptanceAnalysisByProvider(){ 
 try {
 Thread.sleep(5000);
@@ -214,7 +214,7 @@ return flag;
 
 }	
 
-//@Test
+@Test
 public boolean ClaimsUnderPaidOverPaidDenied(){ 
 try {
 Thread.sleep(5000);
@@ -256,7 +256,7 @@ return flag;
 /////////////////////////////////////////////////////// Office Reports - DHA Reports ////////////////////////////////////////////////
 
 
-//@Test
+@Test
 public boolean ProviderCompensationReportDetailExcel(){ 
 	try {
 		Thread.sleep(5000);
@@ -298,7 +298,7 @@ public boolean ProviderCompensationReportDetailExcel(){
 			}	
 
 
-//@Test
+@Test
 public boolean ProviderUCRReportDetailExcel(){ 
 	try {
 		Thread.sleep(5000);
@@ -340,7 +340,7 @@ public boolean ProviderUCRReportDetailExcel(){
 			}	
 
 
-//@Test
+@Test
 public boolean EligibilityReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -383,7 +383,7 @@ public boolean EligibilityReport(){
 
 /////////////////////////////////////////////////////// Office Reports - Hawaii Family Dental Reports ////////////////////////////////////////////////
 
-//@Test
+@Test
 public boolean ProviderCompensationReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -424,7 +424,7 @@ public boolean ProviderCompensationReport(){
 
 			}	
 
-//@Test
+@Test
 public boolean CarrierAnalysis(){ 
 	try {
 		Thread.sleep(5000);
@@ -465,7 +465,7 @@ public boolean CarrierAnalysis(){
 
 			}	
 
-//@Test
+@Test
 public boolean UncollectedCopay(){ 
 	try {
 		Thread.sleep(5000);
@@ -506,7 +506,7 @@ public boolean UncollectedCopay(){
 
 			}	
 
-//@Test
+@Test
 public boolean OutstandingClaimsHawaii(){ 
 	try {
 		Thread.sleep(5000);
@@ -547,7 +547,7 @@ public boolean OutstandingClaimsHawaii(){
 
 			}	
 
-//@Test
+@Test
 public boolean PatientReceivablesAgingReportbyHomeOffice(){ 
 	try {
 		Thread.sleep(5000);
@@ -588,7 +588,7 @@ public boolean PatientReceivablesAgingReportbyHomeOffice(){
 
 			}	
 
-//@Test
+@Test
 public boolean PatientListByLastvisit(){ 
 	try {
 		Thread.sleep(5000);
@@ -629,7 +629,7 @@ public boolean PatientListByLastvisit(){
 
 			}	
 
-//@Test
+@Test
 public boolean WeeklyProviderProductionExcel(){ 
 	try {
 		Thread.sleep(5000);
@@ -670,7 +670,7 @@ public boolean WeeklyProviderProductionExcel(){
 
 			}	
 
-//@Test
+@Test
 public boolean NextAppointmentBookedReportExcel(){ 
 	try {
 		Thread.sleep(5000);
@@ -711,7 +711,7 @@ public boolean NextAppointmentBookedReportExcel(){
 
 			}	
 
-//@Test
+@Test
 public boolean TPCIncentiveReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -757,7 +757,7 @@ public boolean TPCIncentiveReport(){
 
 
 
-//@Test
+@Test
 public boolean DenticalEOB(){ 
 	try {
 		Thread.sleep(5000);
@@ -797,7 +797,7 @@ public boolean DenticalEOB(){
 
 /////////////////////////////////////////////////////// Office Reports - DCA Reports ////////////////////////////////////////////////
 
-//@Test
+@Test
 public boolean DailyJournalDetailLandscape(){ 
 	try {
 		Thread.sleep(5000);
@@ -839,7 +839,7 @@ public boolean DailyJournalDetailLandscape(){
 			}	
 
 
-//@Test
+@Test
 public boolean DailyCollectionbyOffice(){ 
 	try {
 		Thread.sleep(5000);
@@ -880,7 +880,7 @@ public boolean DailyCollectionbyOffice(){
 
 			}	
 
-//@Test
+@Test
 public boolean DailyCollectionbyOfficeDetail(){ 
 	try {
 		Thread.sleep(5000);
@@ -921,7 +921,7 @@ public boolean DailyCollectionbyOfficeDetail(){
 
 			}
 
-//@Test
+@Test
 public boolean DailyCollectionbyProviderAllocation(){ 
 	try {
 		Thread.sleep(5000);
@@ -962,7 +962,7 @@ public boolean DailyCollectionbyProviderAllocation(){
 
 			}
 
-//@Test
+@Test
 public boolean MultiStepProcedures(){ 
 	try {
 		Thread.sleep(5000);
@@ -1003,7 +1003,7 @@ public boolean MultiStepProcedures(){
 
 			}
 
-//@Test
+@Test
 public boolean CapitationReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -1044,7 +1044,7 @@ public boolean CapitationReport(){
 
 			}
 
-//@Test
+@Test
 public boolean AllocationAnalysisReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -1085,7 +1085,7 @@ public boolean AllocationAnalysisReport(){
 
 			}
 
-//@Test
+@Test
 public boolean TreatmentPlanStatusNewPatientsDetail(){ 
 	try {
 		Thread.sleep(5000);
@@ -1126,7 +1126,7 @@ public boolean TreatmentPlanStatusNewPatientsDetail(){
 
 			}
 
-//@Test
+@Test
 public boolean IncomeAllocationHygienistReportDetail (){ 
 	try {
 		Thread.sleep(5000);
@@ -1167,7 +1167,7 @@ public boolean IncomeAllocationHygienistReportDetail (){
 
 			}
 
-//@Test
+@Test
 public boolean ProviderComparisonReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -1208,7 +1208,7 @@ public boolean ProviderComparisonReport(){
 
 			}
 
-//@Test
+@Test
 public boolean IncomeAllocationHygienistReportSummary(){ 
 	try {
 		Thread.sleep(5000);
@@ -1249,7 +1249,7 @@ public boolean IncomeAllocationHygienistReportSummary(){
 
 			}
 
-//@Test
+@Test
 public boolean ProviderCompensationReportSummary(){ 
 	try {
 		Thread.sleep(5000);
@@ -1290,7 +1290,7 @@ public boolean ProviderCompensationReportSummary(){
 
 			}
 
-//@Test
+@Test
 public boolean BalanceStatusReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -1331,7 +1331,7 @@ public boolean BalanceStatusReport(){
 
 			}
 
-//@Test
+@Test
 public boolean Top25CarrierProduction(){ 
 	try {
 		Thread.sleep(5000);
@@ -1375,7 +1375,7 @@ public boolean Top25CarrierProduction(){
 /////////////////////////////////////////////////////// Office Reports - On Heathcare Reports ////////////////////////////////////////////////
 
 
-//@Test
+@Test
 public boolean OnHealthCareReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -1417,7 +1417,7 @@ public boolean OnHealthCareReport(){
 
 
 
-//@Test
+@Test
 public boolean MilesofSmilesReport(){ 
 	try {
 		Thread.sleep(5000);
@@ -1459,7 +1459,7 @@ public boolean MilesofSmilesReport(){
 
 /////////////////////////////////////////////////////// Office Reports - Tru fAMILY dENTAL Reports ////////////////////////////////////////////////  
 
-//@Test
+@Test
 public boolean DailyProductionvsCollectionReport(){ 
 	try {
 		Thread.sleep(5000);

@@ -123,7 +123,8 @@ public static ExtentTest test;
 		{
 	        if(result.getStatus() == ITestResult.FAILURE)
 	        {
-	            String screenShotPath = GetFullPageScreenShot.capture(driver, "MyFullPageScreenshot");
+	        	if(CommonMethods.isAlertPresent()){}
+	            String screenShotPath = GetFullPageScreenShot.capture(DriverManager.getDriver(), "MyFullPageScreenshot");
 	            test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));
 	            test.fail(result.getThrowable());
 	            test.fail("Snapshot below: " + test.addScreenCaptureFromPath(screenShotPath));

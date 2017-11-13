@@ -242,7 +242,7 @@ public class TreatmentPlan extends SeleniumSuite{
 	 		
 		return flag;
 	 	}
-	@Test(description="Verify Patient tab functionality")
+//	@Test(description="Verify Patient tab functionality")
 	public boolean verifyAddTreatmentPlanFromCategories() {
  		
 		try{ 
@@ -434,7 +434,7 @@ public class TreatmentPlan extends SeleniumSuite{
 		return flag;
 	 	}
 	
-	@Test(description="Verify Patient tab functionality")
+//	@Test(description="Verify Patient tab functionality")
 	public boolean verifyChangeAddedTreatmentPlanDetails() {
  		
 		try{ 

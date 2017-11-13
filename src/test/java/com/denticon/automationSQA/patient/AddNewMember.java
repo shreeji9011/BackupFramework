@@ -42,7 +42,9 @@ boolean flag=false;
   Thread.sleep(5000);
   
   //Handle duplicate patient pop up
- // flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
+ 
+  
+  flag=CommonMethods.clickIfEnable(IAddPatient.BTN_CloseIdenticalPatientPopup);
   
   stepInfo="Enter Birthdate";
   String birthdate = CommonMethods.readDatafromProps(filePath, "Bdate");

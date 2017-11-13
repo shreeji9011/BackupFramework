@@ -22,10 +22,11 @@ public class TransactionEntry extends SeleniumSuite{
 	 	String filePath=System.getProperty("user.dir") + "\\src\\main\\resources\\TreatmentPlan.properties"; 
 	 	Properties prop= new Properties();
 	
-		@Test(description="previously added treatment should be displayed in transaction entry")
+//@Test(description="previously added treatment should be displayed in transaction entry")
 	 	public boolean verifyPreviousTreatmentPlanInTransactionEntry() {
 	 		
 	 	try{ 
+	 		
 	 		SearchPatientByPatientID("916");
 
 	 		stepInfo="Click on Transactions tab";
@@ -63,11 +64,11 @@ public class TransactionEntry extends SeleniumSuite{
 		return flag; 		
 	 	}
 	 	
-		@Test(description="Verify Patient tab functionality")
+//		@Test(description="Verify Patient tab functionality")
 		public boolean verifyAddTreatmentPlanUsingDifferentCodes() {
 	 		
 			try{ 
-		 		SearchPatientByPatientID("916");
+	//	 		SearchPatientByPatientID("916");
 
 				stepInfo="Click on Transactions tab";
 	 			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
@@ -335,11 +336,11 @@ public class TransactionEntry extends SeleniumSuite{
 			return flag;
 		 	}
 	 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry")
+//	 	@Test(description="previously added treatment should be displayed in transaction entry")
 	 	public boolean editTreatmentPage() {
 	 		
 	 	try{ 
-	 		SearchPatientByPatientID("916");
+	// 		SearchPatientByPatientID("916");
 
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
@@ -376,7 +377,7 @@ public class TransactionEntry extends SeleniumSuite{
 	 	public boolean LedgerPage() {
 	 		
 	 	try{ 
-	 		SearchPatientByPatientID("916");
+//	 		SearchPatientByPatientID("916");
 
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
@@ -447,7 +448,7 @@ public class TransactionEntry extends SeleniumSuite{
 	 		
 	 	try{ 
 	 		
-	 		SearchPatientByPatientID("916");
+	 		SearchPatientByPatientID("1165");
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
@@ -473,7 +474,7 @@ public class TransactionEntry extends SeleniumSuite{
 	 	public boolean insurancePayment() {
 	 		
 	 	try{ 
-	 		SearchPatientByPatientID("916");
+	 		SearchPatientByPatientID("64");
 
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
@@ -483,9 +484,8 @@ public class TransactionEntry extends SeleniumSuite{
  			
  			
  			stepInfo="Click on date field"; 
- 			//flag=CommonMethods.clickIfEnable(ITransaction.LNK_InsurancePaymentDate);
- 			//flag=CommonMethods.clickIfEnable(ITransaction.CHK_TreamentForClaims);
- 			flag =CommonMethods.sendText(ITransaction.TXT_InsurancePaymentAmt, "50");
+
+ 			flag =CommonMethods.sendText(ITransaction.TXT_InsurancePaymentAmt,"50");
  			flag=CommonMethods.clickIfEnable(ITransaction.BTN_InsuranceApply);		
  			
  			if(CommonMethods.isAlertPresent());
@@ -498,11 +498,11 @@ public class TransactionEntry extends SeleniumSuite{
 		return flag; 		
 	 	}
 	 	
-	 	@Test(description="previously added treatment should be displayed in transaction entry", dependsOnMethods="createClaim")
+	 	@Test  (description="previously added treatment should be displayed in transaction entry", dependsOnMethods="createClaim")
 	 	public boolean batchPatientPayment() {
 	 		
 	 	try{ 
-	 		SearchPatientByPatientID("916");
+	 		SearchPatientByPatientID("64");
 
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
@@ -528,20 +528,21 @@ public class TransactionEntry extends SeleniumSuite{
  		} 		
 		return flag; 		
 	 	}
-	 	//, dependsOnMethods="createClaim"
-	 	@Test(description="previously added treatment should be displayed in transaction entry" , dependsOnMethods="createClaim")
+	 	
+	 	
+	 	
+	 	@Test  //(description="previously added treatment should be displayed in transaction entry" , dependsOnMethods="createClaim")
 	 	public boolean batchInsurancePayment() {
 	 		
 	 	try{ 
-	 		SearchPatientByPatientID("916");
+	 		SearchPatientByPatientID("64");
 
 	 		stepInfo="Click on Transactions tab";
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_TRANSACTIONS); 
  			
 	 		stepInfo="Click on treatment plan"; 
  			flag=CommonMethods.clickIfEnable(ITransaction.TAB_BatchPatientPayment);
- 			
- 			//?check treatment for above selected claims ???
+ 
  					 	
 	 	} catch (Exception e) { 
  			e.printStackTrace(); 
