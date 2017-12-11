@@ -296,6 +296,7 @@ public interface IReport {
 	  By Lnk_TreatmentPlanStatusbyCodeDetail = By.id("rbTreatStatusCodeD");
 	  
 	  By Lnk_TreatmentPlanDetail = By.id("rbTxPlnD");
+	  By slc_procedureCode = By.xpath("//*[@id='lbCodes']/option[3]");
 	  
 	  //////// Referral Reports ///// 
 	  

@@ -1,9 +1,6 @@
 package com.denticon.automationSQA.reporting;
 
-import java.util.ArrayList; 
-import java.util.List; 
 import java.util.Set;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -41,11 +38,7 @@ public class Postcards extends SeleniumSuite{
  			for (String window : windowHandles) {
  				DriverManager.getDriver().switchTo().window(window);
  			}
- 			
- 			stepInfo="Verify Execution Summary report with Title";
- 			 			Thread.sleep(5000);
- 			 			flag=CommonMethods.isElementPresent(IReport.PDF_AgingDetail);
- 			 			
+
  			 			DriverManager.getDriver().close();
  			 		 			DriverManager.getDriver().switchTo().window(parentWindow);
 		} catch (Exception e) { 
@@ -77,10 +70,7 @@ public boolean AppointmentPostcards(){
 			for (String window : windowHandles) {
 				DriverManager.getDriver().switchTo().window(window);
 			}
-			
-			stepInfo="Verify Execution Summary report with Title";
-			 			Thread.sleep(5000);
-			 			flag=CommonMethods.isElementPresent(IReport.PDF_AgingDetail);
+
 			 			
 			 			DriverManager.getDriver().close();
 			 		 			DriverManager.getDriver().switchTo().window(parentWindow);
@@ -112,10 +102,7 @@ public boolean BirthdayPostcards(){
 			for (String window : windowHandles) {
 				DriverManager.getDriver().switchTo().window(window);
 			}
-			
-			stepInfo="Verify Execution Summary report with Title";
-			 			Thread.sleep(5000);
-			 			flag=CommonMethods.isElementPresent(IReport.PDF_AgingDetail);
+
 			 			
 			 			DriverManager.getDriver().close();
 			 		 			DriverManager.getDriver().switchTo().window(parentWindow);

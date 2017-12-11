@@ -210,7 +210,7 @@ public boolean TreatmentPlanDetail(){
 			stepInfo="Select Executive Summary";
 			flag=CommonMethods.clickIfEnable(IReport.Lnk_TreatmentPlanDetail);
 			Thread.sleep(2000);
-
+			flag=CommonMethods.clickIfEnable(IReport.slc_procedureCode);
 			stepInfo="Click on Print Preview Icon ";
 			flag=CommonMethods.clickIfEnable(IReport.BTN_PRINT_PREVIEW);
 			

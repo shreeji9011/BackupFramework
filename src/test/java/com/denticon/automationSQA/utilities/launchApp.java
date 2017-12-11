@@ -63,7 +63,7 @@ return flag;
 }
 
 
-//@Test
+@Test
 public boolean DentilyticsBasic(){ 
 	try {
 		stepInfo="Click on Utilities tab";
@@ -87,7 +87,7 @@ return flag;
 }
 
 
-@Test
+//@Test
 public boolean DentilyticsEnterprise(){ 
 	try {
 		stepInfo="Click on Utilities tab";
